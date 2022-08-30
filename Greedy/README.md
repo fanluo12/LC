@@ -18,3 +18,9 @@ After loop through left to right we get a new destination and assign to right, s
 ## 134. Gas Station
 Sum up total gas and cost, if total gas less than total cost simply return true
 For loop through gas(or cost) from 0 index. Use a variable total to record leftover gas. Then total += gas[i] - cost[i]. If total < 0 means cannot reach next gas station then assign 0 to total to reset. In the meantime, use another variable answer to record index and index should ++ since current not satisfy
+
+## 846. Hand of Straights
+# Given hand = [1,2,3,6,2,3,4,7,8], groupSize = 3 and return true since hand can be rearranged as [1,2,3],[2,3,4],[6,7,8]
+1. Use HashMap to record each element number
+2. Use priority queue(pq) to record each element with ascending order
+3. Under while(!pq.isEmpty()) loop, first take peek element(smallest element) as start. Then with for loop through start to (start + groupSize), if map didn't contains in this interval, return false, else map substract element with 1. If map.get(element in this interval) == 0, we need to see if this is the peek, aka head, if not, which means number chain broke, just return false
