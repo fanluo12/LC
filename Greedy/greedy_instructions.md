@@ -24,3 +24,8 @@ For loop through gas(or cost) from 0 index. Use a variable total to record lefto
 1. Use HashMap to record each element number
 2. Use priority queue(pq) to record each element with ascending order
 3. Under while(!pq.isEmpty()) loop, first take peek element(smallest element) as start. Then with for loop through start to (start + groupSize), if map didn't contains in this interval, return false, else map substract element with 1. If map.get(element in this interval) == 0, we need to see if this is the peek, aka head, if not, which means number chain broke, just return false
+
+## 1899. Merge Triplets to Form Target Triplet
+Use 3 variables a, b, c to compare and update to final answer
+For loop through Triplets array, if all elements in triplet[i] is less than same index of target, we update a, b, c to the max of themselves and each index of triplet[i].
+Finally we judge if [a, b, c] == target
