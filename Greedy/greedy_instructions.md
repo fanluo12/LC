@@ -29,3 +29,9 @@ For loop through gas(or cost) from 0 index. Use a variable total to record lefto
 Use 3 variables a, b, c to compare and update to final answer
 For loop through Triplets array, if all elements in triplet[i] is less than same index of target, we update a, b, c to the max of themselves and each index of triplet[i].
 Finally we judge if [a, b, c] == target
+
+## 763. Partition Labels
+Since it's about indices, we use hash map to record last index of each character
+We use variable size to track increasing size of character chain.
+For loop string, identify each character's last index with a variable end. In the meantime size++ on each loop. If i== end, add size to array list
+
