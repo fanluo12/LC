@@ -11,3 +11,6 @@ Use array list to add interval from intervals
 2. Add first interval to array list
 3. Loop through intervals from second interval, if new interval start less than array list last element's end, then replace last element of array list's end with minimum end. If not then just adding new interval
 
+## 435. Non-overlapping Intervals
+Sort intervals with first element ascending order
+Use a prevEnd variable to compare end element. Initialize prevEnd with intervals[0][1]
