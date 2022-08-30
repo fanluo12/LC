@@ -35,3 +35,6 @@ Since it's about indices, we use hash map to record last index of each character
 We use variable size to track increasing size of character chain.
 For loop string, identify each character's last index with a variable end. In the meantime size++ on each loop. If i== end, add size to array list
 
+## 678. Valid Parenthesis String
+Use leftMin and leftMax two variables to update brackets number
+For loop through string, if character is '(', add 1 on two variables. If character is ')', minus 1 on two variables. What we need to do is track leftMax to see if it is less than 0, if so, return false. For leftMin, since may have '*', so once leftMin < 0 reset leftMin to 0. Based on these circumstance we can see the third judge of if statement is that once met '*', leftMin -- and leftMax ++
