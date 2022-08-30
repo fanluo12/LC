@@ -8,3 +8,10 @@ For loop through array, if maxDestination < i, return false since cannot reach o
 Update maxDestination with maximum of itself and nums[i] + i
 If maxDestination greater then array length, then return true
 
+## 45. Jump Game II
+We need to reach last index with minimum jump, so this is kind like dynamic programming with two pointers left and right
+Take [2,3,1,1, 4] as an example, if we jump from first index with its maximum capacity, we need jump 3 times rather an optimized way. So this question need to evaluate each step to see under what circumatance can let right reach last index
+Use while loop to track right to see if reaches end
+In while loop, each time we initialize a maxDestination = 0, then we update left pointer with for loop until right to see maxDestination can be.
+After loop through left to right we get a new destination and assign to right, so next while loop excutes will break. In the meantime we left++ and answer++
+
