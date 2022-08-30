@@ -15,3 +15,6 @@ Use while loop to track right to see if reaches end
 In while loop, each time we initialize a maxDestination = 0, then we update left pointer with for loop until right to see maxDestination can be.
 After loop through left to right we get a new destination and assign to right, so next while loop excutes will break. In the meantime we left++ and answer++
 
+## 134. Gas Station
+Sum up total gas and cost, if total gas less than total cost simply return true
+For loop through gas(or cost) from 0 index. Use a variable total to record leftover gas. Then total += gas[i] - cost[i]. If total < 0 means cannot reach next gas station then assign 0 to total to reset. In the meantime, use another variable answer to record index and index should ++ since current not satisfy
