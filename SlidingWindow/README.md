@@ -17,3 +17,9 @@ Use left pointer and for loop through right pointer
 Declare 2 variables, minLeft = 0 and minLen for final substring
 Use hash map to store t string character occurance
 In for loop, if we find map contains key of right pointer position, map put -1 for this position's character. Once right position still >= 0 we add 1 to count variable. When count == t.length(), we need less window we have. So if the new window size now(right - left + 1) < minLen means we can update minLen to new window size and update minLeft as left. In the meantime, we can update left pointer while count == t.length() and once map contains left key, map put +1 to this key and -1 to count since new window need to update
+
+
+## 239. Sliding Window Maximum
+For loop through array and use deque to store indices, when deque is not empty and reaches k, pop first element of deque
+When deque is not empty and new coming position is greater than last, pop last element
+Once looping index greater than k - 1, update answer array with head element of deque
