@@ -18,3 +18,8 @@ For loop throught each row, under each for loop, loop throught each columns
 In outer for loop, when looping each row, initialize 3 sets- row set, columns set and sub-box set
 In inner for loop, check if non-null element can be add to row set(!rowSet.add(board[r][c]) -> return false), check if non-null element can be add to column set(!rowSet.add(board[c][r]) -> return false) and check if non-null element can be add to sub-box set(!sub-box-set.add(board[R][C]))
 How to get R, C for sub-box? Under r and c loop, initialize row = (r/3)*3, col = (r % 3) * 3, then R = row + c / 3, C = col + c % 3
+
+## 49. Group Anagrams
+### Input: strs = ["eat","tea","tan","ate","nat","bat"]
+### Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
+For each string of strs, we created a character array and assign 26 length to it. Then we fill characters of each string to character array to get a string-value. We put string-value into map with responding string to find anagrams
