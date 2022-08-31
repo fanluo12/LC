@@ -12,3 +12,8 @@ Use hash map to store character occurence string s1
 For loop through s2, once map contains key, map put occurance - 1 and when its value is 0 means we have eliminated a key and we adding 1 to result variable. Result variable also in for loop to judge once its equals to map.size(), we return true since all elements been found.
 In for loop, we have these situations, 1. we found s1 at first s1.length() position. Under this situation with last step we can easily return true since map size equals to result. Once our loop index i greater than s1.length(), to avoid un-consecutive case, in the meantime we need to see if (i - s1.length()) is 0 in map. If its value is 0, means current window is wrong and we need to update window and re-add to result since it has been deducted. Then we put map + 1 for its value
 
+## 76. Minimum Window Substring
+Use left pointer and for loop through right pointer
+Declare 2 variables, minLeft = 0 and minLen for final substring
+Use hash map to store t string character occurance
+In for loop, if we find map contains key of right pointer position, map put -1 for this position's character. Once right position still >= 0 we add 1 to count variable. When count == t.length(), we need less window we have. So if the new window size now(right - left + 1) < minLen means we can update minLen to new window size and update minLeft as left. In the meantime, we can update left pointer while count == t.length() and once map contains left key, map put +1 to this key and -1 to count since new window need to update
