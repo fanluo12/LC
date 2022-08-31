@@ -5,3 +5,10 @@ Identify left pointer and for loop right pointer of string to update window. Use
 ## 424. Longest Repeating Character Replacement
 ### Change character at k most times to format longest substring contains same letter 
 Identify left pointer and for loop right pointer through string. Use map to store occurance of right pointer character and update max occurance of character. If window size > max + k, means we can replace in this window and in the meantime update left and remove left pointer character
+
+## 567. Permutation in String
+### Given two strings s1 and s2, return true if s2 contains a permutation of s1, or false otherwise.
+Use hash map to store character occurence string s1
+For loop through s2, once map contains key, map put occurance - 1 and when its value is 0 means we have eliminated a key and we adding 1 to result variable. Result variable also in for loop to judge once its equals to map.size(), we return true since all elements been found.
+In for loop, we have these situations, 1. we found s1 at first s1.length() position. Under this situation with last step we can easily return true since map size equals to result. Once our loop index i greater than s1.length(), to avoid un-consecutive case, in the meantime we need to see if (i - s1.length()) is 0 in map. If its value is 0, means current window is wrong and we need to update window and re-add to result since it has been deducted. Then we put map + 1 for its value
+
