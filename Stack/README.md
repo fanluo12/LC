@@ -12,3 +12,8 @@ For loop through string array.
 Use 2D array to represent position and speed for each car and sort them with descending order(from most near the target)
 For loop through each array of arrays and calculate time to target position. Note time need to use double data type.
 Use stack to store each time. Once upcoming time is <= last time pushed in stack, means upcoming car use less time than previous one and can become fleet, so just continue to overlook them. When to add new one in stack? When the time is greater then previous of stack, means they use long time and cannot make fleet with previous one
+
+## 84. Largest Rectangle in Histogram
+For loop through heights array, put index into stack. Once new upcoming height is higher than previous, pop previous and multiply with top of stack(last position lower then previous). In the meantime update max variable for result.
+### NOTE
+If last element is greater than second last element, then we may not push it into stack. So we have to add 0 to the last index to record increasing height.
