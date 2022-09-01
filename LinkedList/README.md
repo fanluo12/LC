@@ -16,3 +16,9 @@ Then jump slow pointer to the node after its next node
 Use hash map to put node into when looping through linked list.
 Next looping through again linked list, and map.get(current node).next(random) = map.get(curent node.next(random))
 Return map.get(head)
+
+## 2. Add Two Numbers
+Initiate a variable carry which carry the decimal place
+while (l1 != null || l2 != null || carry != 0) to loop through. Each time declare a Next node as 0 and assign value to it. The value would be the sum of l1 + l2 + carry if l1 not null else 0 also same to l2. Next connect cur to Next and change carry. After we need to update l1 and l2
+
+
