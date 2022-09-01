@@ -11,3 +11,8 @@ while (list1 != null && list2 != null) to loop through and compare node.val to a
 First use a fast pointer forward n times.
 Second sent slow pointer(from begining) and fast pointer forward together until fast is null.
 Then jump slow pointer to the node after its next node
+
+## 138. Copy List with Random Pointer
+Use hash map to put node into when looping through linked list.
+Next looping through again linked list, and map.get(current node).next(random) = map.get(curent node.next(random))
+Return map.get(head)
