@@ -23,3 +23,7 @@ How to get R, C for sub-box? Under r and c loop, initialize row = (r/3)*3, col =
 ### Input: strs = ["eat","tea","tan","ate","nat","bat"]
 ### Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
 For each string of strs, we created a character array and assign 26 length to it. Then we fill characters of each string to character array to get a string-value. We put string-value into map with responding string to find anagrams
+
+# NOT FROM NEETCODE
+## 283. Move Zeroes
+Define a variable-cur to represent 0. For loop through array, once meet nums[i] != 0, if i is not same as cur, which means before i(identified not 0) there has 0 so switch them. Outside loop update cur.
