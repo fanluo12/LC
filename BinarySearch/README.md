@@ -9,3 +9,6 @@ Find maximum pile which is the max speed of koko eating(variable as right)
 Set minimum eating speed as left = 1, so we need to search between right and left speed with binary search to find a minumum speed which could eat all bananas in given hour
 Use while loop to binary search, assume middle eating speed is k, and we update the total hour of earing all piles with for loop through piles. This hour variable only records ceiling of each pile / k, i.e. less than one integer we need to count as this integer. It could also be converted to (pile + k - 1)/k
 Once hour been updated through piles, compare with final hour to adjust left or right pointer
+
+## 33. Search in Rotated Sorted Array
+Use left and right pointer to binary search. If nums[mid] < nums[right], if the element between middle and right happens to be ascending order, update left pointer, else right pointer. Also, if nums[mid] > nums[right], if the element from left to middle happens to be ascending order, update right pointer else left pointer
