@@ -8,3 +8,7 @@ For loop through string array.
 3. Once meet "*" and "/" same as above
 4. Once meet other situations, push integer of string into stack
 
+## 853. Car Fleet
+Use 2D array to represent position and speed for each car and sort them with descending order(from most near the target)
+For loop through each array of arrays and calculate time to target position. Note time need to use double data type.
+Use stack to store each time. Once upcoming time is <= last time pushed in stack, means upcoming car use less time than previous one and can become fleet, so just continue to overlook them. When to add new one in stack? When the time is greater then previous of stack, means they use long time and cannot make fleet with previous one
