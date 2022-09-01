@@ -7,3 +7,6 @@ For loop through string array.
 2. Once meet "-", pop 2 element from stack and use last popped one substract first popped one. Push result to stack
 3. Once meet "*" and "/" same as above
 4. Once meet other situations, push integer of string into stack
+
+## 22. Generate Parentheses
+Backtrack to generate parentheses. In backtrack function, use two parameters left and right to generate left and right parenthese. Initialize left and right as n and set end criteria is that left and right are both 0. In each backtrack process, left - 1 if generate "(" and right - 1 if generate ")"
