@@ -23,3 +23,7 @@ while (l1 != null || l2 != null || carry != 0) to loop through. Each time declar
 
 ## 141. Linked List Cycle
 To determine if a linked list has cycle or not, we need to define two pointers, slow and fast where slow moves forward one node speed and fast move two node speed. Once slow meets fast we can know there is cycle
+
+## 23. Merge k Sorted Lists
+Create function which can merge two lists
+While loop through lists when length not equals to 1. Each time for loop through hall lists and merge 0 and 1, 2 and 3, 4 and 5 so on and so far. If length is odd, then we move remained list to the last, i.e. length / 2 position assigns length - 1 position. Finally we divide list to half
