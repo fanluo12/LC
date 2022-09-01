@@ -27,3 +27,11 @@ For each string of strs, we created a character array and assign 26 length to it
 # NOT FROM NEETCODE
 ## 283. Move Zeroes
 Define a variable-cur to represent 0. For loop through array, once meet nums[i] != 0, if i is not same as cur, which means before i(identified not 0) there has 0 so switch them. Outside loop update cur.
+
+## 189. Rotate Array
+nums = "----->-->"; k =3
+result = "-->----->";
+
+reverse "----->-->" we can get "<--<-----"
+reverse "<--" we can get "--><-----"
+reverse "<-----" we can get "-->----->"
