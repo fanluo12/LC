@@ -6,3 +6,8 @@ CLASSIFC WAY TO REVERSE
 
 ## 21. Merge Two Sorted Lists
 while (list1 != null && list2 != null) to loop through and compare node.val to add to new linked list. Note this while loop satisfy both two exists. Once one list loops over and need to judge if the other is null or not. If not null add rest of remained list to new linked list
+
+## 19. Remove Nth Node From End of List
+First use a fast pointer forward n times.
+Second sent slow pointer(from begining) and fast pointer forward together until fast is null.
+Then jump slow pointer to the node after its next node
