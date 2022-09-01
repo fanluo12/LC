@@ -21,4 +21,5 @@ Return map.get(head)
 Initiate a variable carry which carry the decimal place
 while (l1 != null || l2 != null || carry != 0) to loop through. Each time declare a Next node as 0 and assign value to it. The value would be the sum of l1 + l2 + carry if l1 not null else 0 also same to l2. Next connect cur to Next and change carry. After we need to update l1 and l2
 
-
+## 141. Linked List Cycle
+To determine if a linked list has cycle or not, we need to define two pointers, slow and fast where slow moves forward one node speed and fast move two node speed. Once slow meets fast we can know there is cycle
