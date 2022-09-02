@@ -17,3 +17,8 @@ For each odd or even length palindrome search, we use while loop to prevent left
 
 ## 647. Palindromic Substrings
 Same as question 5 above to find palindrome substrings. For loop string and start searching for each index and regarding it as center. Consider odd and even length when searching and update to result
+
+## 91. Decode Ways
+Create dp array with one extra place length since we need to update last index to this extra place.
+This dp array records how many possible ways for decoding of each index, so we initialize 0 and 1 index as 1 and 1 since one digit only has one situations.
+For loop from 2 index, and get integer of substring based on indices. If we are in i index, we need to get integer of substring in (i - 2, i) and (i - 1, i). If these two integers satisfy with [0, 9] and [10, 26] range, we update them to i index of dp array.
