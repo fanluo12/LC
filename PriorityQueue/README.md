@@ -8,3 +8,6 @@ Use priority queue to store stone with descending order. Each time poll two time
 
 ## 973. K Closest Points to Origin
 Use priority queue to store arrays with their distance to origin descending orders. Since we we need k closest points, once the size greater than k we poll larger distance elements
+
+## 215. Kth Largest Element in an Array
+Put elements of array to priority queue and poll until kth largest came out
