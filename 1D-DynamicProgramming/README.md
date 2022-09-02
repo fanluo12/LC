@@ -22,3 +22,7 @@ Same as question 5 above to find palindrome substrings. For loop string and star
 Create dp array with one extra place length since we need to update last index to this extra place.
 This dp array records how many possible ways for decoding of each index, so we initialize 0 and 1 index as 1 and 1 since one digit only has one situations.
 For loop from 2 index, and get integer of substring based on indices. If we are in i index, we need to get integer of substring in (i - 2, i) and (i - 1, i). If these two integers satisfy with [0, 9] and [10, 26] range, we update them to i index of dp array.
+
+## 322. Coin Change
+Create dp array of amount + 1 to represent change ways. We use MAX_VALUE to represent it could not be changes and fill dp array. We set dp[0] to 0
+For loop from 0 to amount, each amount we nested for loop through coin, once amount - coin >= 0 means we can change this amount and we update dp[this amount] as minimum of itself and dp[this amount - coin] + 1 if dp[this amount - coin] is NOT MAX_VALUE(unchangeable)
