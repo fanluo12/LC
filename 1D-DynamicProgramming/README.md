@@ -7,3 +7,6 @@ Create dp array which additional place to last and set it as 0. Then from dp.len
 
 ## 198. House Robber
 We cannot rob adjacent house, so we set a dp array of nums length. We set index 0 as nums[0] and index 1 as maximum of nums[1] and nums[0] since if we iterate through from index 2, if index 1 and 2 are same small our result would small. So index 1 MUST set as max of index 0 and 1
+
+## 213. House Robber II
+For loop through from 0 to -2 index and from 1 to -1 index respectively to update two results and compare
