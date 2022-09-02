@@ -29,3 +29,8 @@ For loop from 0 to amount, each amount we nested for loop through coin, once amo
 
 ## 152. Maximum Product Subarray
 Large positive multiply large positive will get greater value. However, smaller negative value multiply smaller negative value would also get greater positive value. So we need to update positive product as large as we can, in the same time update negative product as smaller as we can. Each time looping we need to see if positive product * current value large or negative product * current value large
+
+## 139. Word Break
+Use hash set to store all strings from wordDict.
+Create dp array to mark contains word or not.
+For loop through string, marked each index as start. For each start index, for loop through end index which initiate as start + 1 until last. If hash set contains s.substring(start, end) NOT end + 1 since single character would possible needed, then mark as 1. If outer for loop meet not 1, continue to pass
