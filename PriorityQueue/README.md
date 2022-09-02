@@ -11,3 +11,9 @@ Use priority queue to store arrays with their distance to origin descending orde
 
 ## 215. Kth Largest Element in an Array
 Put elements of array to priority queue and poll until kth largest came out
+
+## 621. Task Scheduler
+Put task into map with occurance descending order.
+Define variable total time to record answer. Use priority queue to store all task occurance and deque to record unfinished task.
+While loop through when pq is not empty or deque is not empty. Each time looping update total time. If statement to judge if pq is not empty, poll the largest element from pq and -1 to it. If this count is not 0, which means it still needed, we put if into deque as 2D array where other index representing total time + cool down time.
+Next we use if statement to judge if deque is not empty and peek of deque's 1 index(which is the time should stop cool down), we push this back to pq since now its needed!
