@@ -34,3 +34,6 @@ Large positive multiply large positive will get greater value. However, smaller 
 Use hash set to store all strings from wordDict.
 Create dp array to mark contains word or not.
 For loop through string, marked each index as start. For each start index, for loop through end index which initiate as start + 1 until last. If hash set contains s.substring(start, end) NOT end + 1 since single character would possible needed, then mark as 1. If outer for loop meet not 1, continue to pass
+
+## 300. Longest Increasing Subsequence
+Reversely for loop, for each index, for loop from current position to end, once meet larger, update larger position with index number + 1 and update to result for largest value
