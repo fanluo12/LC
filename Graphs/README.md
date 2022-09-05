@@ -18,3 +18,7 @@ For those non-T are just flip them. Finally flip T to O
 Count total fresh oranges and use minutes to update final result.
 Use deque to input row and col of rotten orange.
 While loop deque until its empty or still have fresh. Add new direction which could be rotten to deque
+
+## 127. Word Ladder
+Use map to store pattern of each word with replacing each character to *. Key as pattern and value as word
+Use deque to add word into it. While looping deque until it is empty, each time we poll word from deque. If word happends to be end word just return it. Else, we need find this word's all pattern and see if map contains it and use visited set to reduce duplicate times
