@@ -22,3 +22,9 @@ While loop deque until its empty or still have fresh. Add new direction which co
 ## 127. Word Ladder
 Use map to store pattern of each word with replacing each character to *. Key as pattern and value as word
 Use deque to add word into it. While looping deque until it is empty, each time we poll word from deque. If word happends to be end word just return it. Else, we need find this word's all pattern and see if map contains it and use visited set to reduce duplicate times
+
+## 684. Redundant Connection
+Use parent array to represent original from-to. Initialte parent as [0, 1, 2, 3...]
+Find function, for input node, return what it should be in parent. For example, input is 2, we return parent[2]
+Union function, given a and b input node, we find their output from parent, ie, parent[a] and parent[b]. If they are same, return. Else assign paren[a] = b
+For each edge, first we find output from parent with find function. If they are same, for example, given [1, 2], [1, 3], [2, 3], after first two parent should be[0, 2, 3, 3...]. So for the last [2, 3], with find function, we find 3 == 3 then return this edge
