@@ -13,3 +13,8 @@ Finally cross check two sets' intersections.
 ## 130. Surrounded Regions
 Start dfs from border, if border is 0 and connected 4 directions are 0, mark them as T.
 For those non-T are just flip them. Finally flip T to O
+
+## 994. Rotting Oranges
+Count total fresh oranges and use minutes to update final result.
+Use deque to input row and col of rotten orange.
+While loop deque until its empty or still have fresh. Add new direction which could be rotten to deque
