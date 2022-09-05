@@ -9,3 +9,7 @@ In dfs, once we out of boundry or current position is 0, we return 0. Then mark 
 ## 417. Pacific Atlantic Water Flow
 Use 2 sets representing pacific and atlantic. Start from each ocean boundary and search for higher altitude inside and populate sets.
 Finally cross check two sets' intersections.
+
+## 130. Surrounded Regions
+Start dfs from border, if border is 0 and connected 4 directions are 0, mark them as T.
+For those non-T are just flip them. Finally flip T to O
