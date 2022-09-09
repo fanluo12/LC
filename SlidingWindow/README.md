@@ -23,3 +23,9 @@ In for loop, if we find map contains key of right pointer position, map put -1 f
 For loop through array and use deque to store indices, when deque is not empty and reaches k, pop first element of deque
 When deque is not empty and new coming position is greater than last, pop last element
 Once looping index greater than k - 1, update answer array with head element of deque
+
+## 1004. Max Consecutive Ones III
+Use numZeros to count 0 of nums array.
+Use left = 0 to represent left window and for loop through right window of array
+Once meet 0 numZeros ++. Once numZeros greater than k, update left window. In the meantime we need to check if left window is 0 then numZeros --
+Update max while numZeros <= k
