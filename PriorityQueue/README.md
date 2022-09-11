@@ -1,3 +1,5 @@
+# 5 total - 09/11/2022
+
 ## 347. Top K Frequent Elements
 Use map to store each integer's occurance
 Use priority queue to store entry set of map with descending order of map's values
