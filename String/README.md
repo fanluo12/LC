@@ -1,3 +1,7 @@
+## 6. Zigzag Conversion
+Use String array to store. Each row initiate as empty string
+For loop through string to put characters to string array. For each character input, string arr[row] += character and update row += direction(initialize as 0). We need to update directions to 1 if row == 0 and -1 if row == numRows - 1
+
 ## 8. String to Integer (atoi)
 1. First judge if s == null("") or s.length()==0 and simply return 0 for these corner case
 2. Trim string to remove empty space
