@@ -1,3 +1,5 @@
+# 9 total - 09/11/2022
+
 ## 206. Reverse Linked List
 CLASSIFC WAY TO REVERSE
 1. Find length of linked list
