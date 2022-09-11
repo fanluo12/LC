@@ -1,3 +1,5 @@
+# 10 total - 09/11/2022
+
 ## 125. Valid Palindrome
 Simply use two pointers left(from head) and right(from tail) to loop forward and backward. 2 things to noted:
 1. In while loop to update two pointers, we need to set left <= right since this may deal with odd length palindrome case
