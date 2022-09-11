@@ -1,3 +1,5 @@
+# 7 total - 09/11/2022
+
 ## 704. Binary Search
 Simply while (left <= right) and find mid of left and right pointer
 
