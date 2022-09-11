@@ -1,4 +1,4 @@
-# 10 total - 09/11/2022
+# 11 total - 09/11/2022
 
 ## 125. Valid Palindrome
 Simply use two pointers left(from head) and right(from tail) to loop forward and backward. 2 things to noted:
@@ -32,3 +32,6 @@ While looping right index, if left index number is same as right index, right ++
 For 27, 
 Use left pointer and right pointer all starts at 0 since nums length could be 0 and 1.
 While loop right until length, if right position is not val, switch left and right and update left++
+
+## 28. Find the Index of the First Occurrence in a String
+For loop through string, for each index initiate main string pointer and substring pointer. While main string[pointer1] == substring[pointer2] we update two pointers and check if substring pointer reaches end
