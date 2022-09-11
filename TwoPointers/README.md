@@ -21,3 +21,7 @@ Since we need to exclude duplicate answer and there may be multiple answers, we 
 Although this is a number rather data structure, we can still use pointers idea
 First negative value would never be a palindrome number
 left = 0 and right = number. while (right > 0), each time we update left = left * 10 + right % 10 and right / 10 to see finally they equal or not.
+
+## 26. Remove Duplicates from Sorted Array
+Use left pointer(starts at 0 index) and right pointer(starts at 1 index) and while loop through right index until length
+While looping right index, if left index number is same as right index, right ++ until non-duplicate plcae. Then update left and switch with right position. Note we need to add a judgement to see if right out of bounds
