@@ -22,6 +22,11 @@ Although this is a number rather data structure, we can still use pointers idea
 First negative value would never be a palindrome number
 left = 0 and right = number. while (right > 0), each time we update left = left * 10 + right % 10 and right / 10 to see finally they equal or not.
 
-## 26. Remove Duplicates from Sorted Array
+## 26. Remove Duplicates from Sorted Array && 27. Remove Element
+These two are similar
+For 26,
 Use left pointer(starts at 0 index) and right pointer(starts at 1 index) and while loop through right index until length
 While looping right index, if left index number is same as right index, right ++ until non-duplicate plcae. Then update left and switch with right position. Note we need to add a judgement to see if right out of bounds
+For 27, 
+Use left pointer and right pointer all starts at 0 since nums length could be 0 and 1.
+While loop right until length, if right position is not val, switch left and right and update left++
