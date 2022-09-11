@@ -16,3 +16,8 @@ In while loop to update left and right, we need to judge whether leftMax or righ
 
 ## 15. 3Sum
 Since we need to exclude duplicate answer and there may be multiple answers, we need to for loop through every index of array leaving last two indices(since we need 3 sum), from each index i, we need to define left and right pointers from its next position and last position under circumstance that i position is not same as i - 1 position or i is 0. After we set left(i + 1) and right(last index) based on i position, we can assume target is -nums[i] and we need to update left and right to find target. In while loop of updating left and right pointers, we still need to add extra steps to judge if left and right pointer position's values same as left + 1 or right - 1 since we need no duplicate answer
+
+## 9. Palindrome Number
+Although this is a number rather data structure, we can still use pointers idea
+First negative value would never be a palindrome number
+left = 0 and right = number. while (right > 0), each time we update left = left * 10 + right % 10 and right / 10 to see finally they equal or not.
