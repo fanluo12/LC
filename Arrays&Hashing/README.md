@@ -41,3 +41,6 @@ reverse "<-----" we can get "-->----->"
 ## 128. Longest Consecutive Sequence
 Use set to store all elements.
 For loop through set. If current element's previous not in set, we take this one as start and use a pointer to represent it. While set contains this pointer + 1, pointer ++ and calculate max of pointer - current element
+
+# HARD 41. First Missing Positive
+For loop through array, trying to put nums[i] == i + 1
