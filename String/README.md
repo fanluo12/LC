@@ -12,3 +12,6 @@ For loop through string to put characters to string array. For each character in
 5. For loop through from index to s.length()-1. In for loop, first we need to judge if it is digit or not. If not, we need to return sum*sign with int type right away
 6. Then update sum = sum * 10 + s.charAt(i) - '0' since we cannot use String.valueOf
 7. In the meantime we need to see if result sum is greater of less then Integer.MAX(MIN)_VALUE
+
+## 38. Count and Say
+Use a function to update stirng s. In this function, we use string builder to update. If index from 1 to i are same to 0 index, then count ++, else add current count and character to stringbuilder
