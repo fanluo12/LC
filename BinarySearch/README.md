@@ -1,7 +1,10 @@
 # 7 total - 09/11/2022
 
-## 704. Binary Search
+## 704. Binary Search && 35. Search Insert Position
+### 704
 Simply while (left <= right) and find mid of left and right pointer
+### 35
+while (left <= right) -> if (nums[mid] >= target), right = mid + 1, else left = mid - 1. Return left
 
 ## 74. Search a 2D Matrix
 User row = 0 and col = columns - 1 variable to update. If matrix[row][col] < target, update row +1. If matrix[row][col] > target, update col -1. Note that need to satisfy row <= ROWS && col >= 0
