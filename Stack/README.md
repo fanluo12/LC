@@ -19,3 +19,7 @@ Use stack to store each time. Once upcoming time is <= last time pushed in stack
 For loop through heights array, put index into stack. Once new upcoming height is higher than previous, pop previous and multiply with top of stack(last position lower then previous). In the meantime update max variable for result.
 ### NOTE
 If last element is greater than second last element, then we may not push it into stack. So we have to add 0 to the last index to record increasing height.
+
+## 32. Longest Valid Parentheses
+Use stack to store indices
+For loop string, once meet '(', push its index to stack. If not '(', if stack is empty then update start index + 1, else compute current longest length
