@@ -33,3 +33,8 @@ While loop through lists when length not equals to 1. Each time for loop through
 ## 25. Reverse Nodes in k-Group
 Find length of linked list and use while loop to update length until less than k
 In while loop, use classic way to reverse linked list
+
+## 61. Rotate List
+Connect head and tail and put head back to head place.
+Get length of list
+For loop through until length - k % length - 1 place, and break list chain, return rest chain(since connected)
