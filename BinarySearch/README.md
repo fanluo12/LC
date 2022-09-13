@@ -27,3 +27,6 @@ In while loop(left <= right), if left position already less than right, which me
 ## 34. Find First and Last Position of Element in Sorted Array
 This is one main different from binary search. When we find nums[mid] == target, we need to update to both direction to find left most and right most indices.
 After we find nums[mid] == target, we assign left and right pointer as mid and use while loop to update them
+
+## 69. Sqrt(x)
+Use binary search to find square root. Left as 1 and right as x. Each time we find mid, we judge if mid^2 <= x and (mid + 1)^2 > x and return
