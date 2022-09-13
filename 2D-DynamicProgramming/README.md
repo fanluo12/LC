@@ -22,3 +22,6 @@ For loop row and column, mark (0, 0) as true. Then once row(col) greater than 0 
 ## 44. Wildcard Matching
 Create boolean array of extra 1 length and initiate (0, 0) as true. For p stirng, since it contains *, we loop column to update next column as last column if it is '*'.
 Normal for loop through row and column from (1, 1) place. Once s[i - 1] == p[j - 1] or p[j - 1] == '?', result equals to (i - 1, j - 1) place. If p[j - 1] is '*', meaning things after it would match, so simply same as result of (i - 1, j) or (i, j - 1) place. Else fill with false
+
+## 64. Minimum Path Sum
+Use prevSum variable to record previous sum. For loop through array, if row and col are both 0, initialize prevSum as 0. If row == 0, prevSum equals to last column, which is array[r][c - 1]. Same for col. If not (0, 0) or first row or first col, prevSum = min((r-1, c), (r, c-1)). Update array[r][c] = prevSum + grid[r][c]
