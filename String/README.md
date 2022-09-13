@@ -15,3 +15,6 @@ For loop through string to put characters to string array. For each character in
 
 ## 38. Count and Say
 Use a function to update stirng s. In this function, we use string builder to update. If index from 1 to i are same to 0 index, then count ++, else add current count and character to stringbuilder
+
+## 65. Valid Number
+Use digit, e, decimal, sign these boolean variables to judge. Straight forward to see under what circumstance would return false
