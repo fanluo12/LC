@@ -39,5 +39,8 @@ Connect head and tail and put head back to head place.
 Get length of list
 For loop through until length - k % length - 1 place, and break list chain, return rest chain(since connected)
 
-## 82. Remove Duplicates from Sorted List II
+## 82. Remove Duplicates from Sorted List II && 83. Remove Duplicates from Sorted List
+### 82
 Use dummy as 0 node to connect head, pre as dummy and cur as dummy.next. While (cur != null) to search duplicate node. If cur.next is not null and cur.next.val == cur.val, we use while loop which statement same to update cur. When break while loop, we connect pre to cur.next. Else means there is no duplicate and we simply update pre until first place before duplicate
+### 83
+We don't need to if and while loop duplicate pointer until not duplicate. We simply judge if next is duplicate, cur.next = cur.next.next, else we update cur pointer
