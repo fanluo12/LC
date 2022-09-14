@@ -24,7 +24,7 @@ Although this is a number rather data structure, we can still use pointers idea
 First negative value would never be a palindrome number
 left = 0 and right = number. while (right > 0), each time we update left = left * 10 + right % 10 and right / 10 to see finally they equal or not.
 
-## 26. Remove Duplicates from Sorted Array && 27. Remove Element
+## 26. Remove Duplicates from Sorted Array && 27. Remove Element && 80. Remove Duplicates from Sorted Array II
 These two are similar
 For 26,
 Use left pointer(starts at 0 index) and right pointer(starts at 1 index) and while loop through right index until length
@@ -32,6 +32,8 @@ While looping right index, if left index number is same as right index, right ++
 For 27, 
 Use left pointer and right pointer all starts at 0 since nums length could be 0 and 1.
 While loop right until length, if right position is not val, switch left and right and update left++
+For 80,
+Use left = 0 and right = 0 as poiner. While loop through right pointer. If left < 2 or left - 2 element != right, swap left and right and update left
 
 ## 28. Find the Index of the First Occurrence in a String
 For loop through string, for each index initiate main string pointer and substring pointer. While main string[pointer1] == substring[pointer2] we update two pointers and check if substring pointer reaches end
