@@ -1,4 +1,4 @@
-# 7 total - 09/11/2022
+# 8 total - 09/18/2022
 
 ## 53. Maximum Subarray
 Use two variables, res and tmp. res is initialed as Integer.MIN_VALUE to maximum res and tmp in next steps while tmp a running sum of elements in array.
