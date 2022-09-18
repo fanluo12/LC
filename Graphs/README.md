@@ -1,4 +1,4 @@
-# 9 total - 09/11/2022
+# 10 total - 09/18/2022
 
 ## 200. Number of Islands
 For loop through array once we meet "1"--island, we start dfs and update our result for each dfs.
