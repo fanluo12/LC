@@ -1,4 +1,4 @@
-# 9 total - 09/11/2022
+# 19 total - 09/18/2022
 
 ## 206. Reverse Linked List
 CLASSIFC WAY TO REVERSE
