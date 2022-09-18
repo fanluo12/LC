@@ -20,4 +20,4 @@ Use a function to update stirng s. In this function, we use string builder to up
 Use digit, e, decimal, sign these boolean variables to judge. Straight forward to see under what circumstance would return false
 
 ## 205. Isomorphic Strings
-Create two 265-bit ascll character arrays. Loop through string length and put each ascll character as index to each array and value as for loop pointer plus 1. Once m1[s[i]] != m2[t[j]] return false
+Create two 265-bit ascll character arrays. Loop through string length and put each ascll value(eg 'a' would be 97) as index to each array and value as for loop pointer plus 1. Once m1[s[i]] != m2[t[j]] return false
