@@ -44,3 +44,6 @@ For loop through set. If current element's previous not in set, we take this one
 
 # HARD 41. First Missing Positive
 For loop through array, trying to put nums[i] == i + 1
+
+## 149. Max Points on a Line
+Use atan2() is an inbuilt method in Java that is used to return the theta component from the polar coordinate
