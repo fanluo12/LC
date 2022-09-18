@@ -1,4 +1,4 @@
-# 7 total - 09/11/2022
+# 11 total - 09/18/2022
 
 ## 3. Longest Substring Without Repeating Characters
 ### Given a string s, find the length of the longest substring without repeating characters.
