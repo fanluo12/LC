@@ -1,4 +1,4 @@
-# 7 total - 09/11/2022
+# 13 total - 09/18/2022
 
 ## 704. Binary Search && 35. Search Insert Position
 ### 704
