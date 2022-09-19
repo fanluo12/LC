@@ -21,3 +21,7 @@ For loop through 4 directions and put max time of one direction to pq.
 Create a array called prices and populate array with MAX_VALUE for updating cheapest prices and marking visited. Initiate src city as 0.
 For loop through until k times since we want to stop k times then total would be k + 1 stop. 
 Each time we looping we start a new looping through all flights information to find a cheap way. The idea is updating cheaper prices for prices[s] + cost. At first, one result will surely less than MAX_VALUE, then other result would less than this one if there has. If src city is MAX_VALUE, we just continue to jump over it. Remember each time we loop flights, we need to deep copy original prices and assign back when flights loop done
+
+## 207. Course Schedule
+Use list to store all courses. For each pre-course, add its children course to list. Loop through courses, if dfs function return false then return false
+For dfs function, we start to search from first course and mark it as 1--visited. We get its children courses, ie only take children courses you have to take this course, and iterate children courses. Once children course marked 1, means dead loop and return false. If children is 0, which means not visited, dfs from here and when dfs return false simply return false. Finally we mark this course as 2--done visiting
