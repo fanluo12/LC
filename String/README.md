@@ -21,3 +21,12 @@ Use digit, e, decimal, sign these boolean variables to judge. Straight forward t
 
 ## 205. Isomorphic Strings
 Create two 265-bit ascll character arrays. Loop through string length and put each ascll value(eg 'a' would be 97) as index to each array and value as for loop pointer plus 1. Once m1[s[i]] != m2[t[j]] return false
+
+## 214. Shortest Palindrome
+This one is HARD. Simple brute-force method:
+Example: s = dedcba. Then t = abcded
+s          dedcba
+  r[0:]      abcded    Nope...
+  r[1:]   (a)bcded     Nope...
+  r[2:]  (ab)cded      Nope...
+  r[3:] (abc)ded       Yes! Return abc + dedcba
