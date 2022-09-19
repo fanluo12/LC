@@ -1,7 +1,10 @@
 # 16 total - 09/18/2022
 
-## 217. Contains Duplicate
+## 217. Contains Duplicate && 219. Contains Duplicate II
+### 217
 Use hash set to loop through array. Once cannot add element to hash set then return false
+### 218
+Take. k as a sliding window. For loop through array and put elements to hashset. If window size greater than k, remove i - k - 1 element from set. If cannot add(means duplicate in k window) then return
 
 ## 242. Valid Anagram
 Use hash map to store character occurance time. 
