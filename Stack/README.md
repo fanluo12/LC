@@ -3,7 +3,7 @@
 ## 20. Valid Parentheses
 Use stack to push other side of brackets once meet brackets. For example, when we have ( or ([{ we push ) or )]}. In this case we have unfinished brackets in our stack. If new element(unfinished brackets) is not same with stack.pop(), then it's not valid. Also, if stack is empty() if new element looping, it's also false
 
-## 150. Evaluate Reverse Polish Notation && 224. Basic Calculator
+## 150. Evaluate Reverse Polish Notation && 224. Basic Calculator && 227. Basic Calculator II
 ### 150
 For loop through string array.
 1. Once meet "+", push sum of two element popped from stack
@@ -18,6 +18,8 @@ Loop through string
 4. Once meet (, push output and sign to integer stack and re-assign output = 0 and sign = 1 for parenthenese inside operation
 5. Once meet ), means finish parenthenese inside, we need to update output as cur * sign(inside part), and connect with outside, first * stack.pop(sign), then add stack.pop(last output) and re-assign cur to 0
 6. Remember if there are remaining cur, need to update to result
+### 227
+Still need cur, output and sign(initialize as '+') to tracking result. While character is digit, update cur since there would be two or more digit case. If character is one of 4 signs, push cur and -cur to stack if + or -, stack.pop() * or / if * or /. Remember update cur and sign
 
 ## 853. Car Fleet
 Use 2D array to represent position and speed for each car and sort them with descending order(from most near the target)
