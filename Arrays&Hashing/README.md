@@ -50,3 +50,6 @@ For loop through array, trying to put nums[i] == i + 1
 
 ## 149. Max Points on a Line
 Use atan2() is an inbuilt method in Java that is used to return the theta component from the polar coordinate
+
+## 287. Find the Duplicate Number
+Very fresh method. We want to find duplicate number from array. Array length is n and all number from 1 to n. So we can mark visited number as index, and put index-based element as negative. Then once we meet an element which is negative we can simply find result
