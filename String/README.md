@@ -30,3 +30,7 @@ s          dedcba
   r[1:]   (a)bcded     Nope...
   r[2:]  (ab)cded      Nope...
   r[3:] (abc)ded       Yes! Return abc + dedcba
+  
+ ## 299. Bulls and Cows
+ Use a number array which from 0-9 to represent each number.
+ For loop through string, if secret[i] == guess[i], update bulls result. Else, use current digit of secret to +1 in numbers array and guess -1 in array. Once nums[secret[i]] < 0 or nums[guess[i] > 0], update cows
