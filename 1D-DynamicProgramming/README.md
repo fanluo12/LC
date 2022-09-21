@@ -25,9 +25,12 @@ Create dp array with one extra place length since we need to update last index t
 This dp array records how many possible ways for decoding of each index, so we initialize 0 and 1 index as 1 and 1 since one digit only has one situations.
 For loop from 2 index, and get integer of substring based on indices. If we are in i index, we need to get integer of substring in (i - 2, i) and (i - 1, i). If these two integers satisfy with [0, 9] and [10, 26] range, we update them to i index of dp array.
 
-## 322. Coin Change
+## 322. Coin Change && 279. Perfect Squares
+### 322
 Create dp array of amount + 1 to represent change ways. We use MAX_VALUE to represent it could not be changes and fill dp array. We set dp[0] to 0
 For loop from 0 to amount, each amount we nested for loop through coin, once amount - coin >= 0 means we can change this amount and we update dp[this amount] as minimum of itself and dp[this amount - coin] + 1 if dp[this amount - coin] is NOT MAX_VALUE(unchangeable)
+### 279
+Convert this question as you have amount as n, and you want to change n to coins, the coins concsist from 1^2 to Math.pow(n, 0.5)^2
 
 ## 152. Maximum Product Subarray
 Large positive multiply large positive will get greater value. However, smaller negative value multiply smaller negative value would also get greater positive value. So we need to update positive product as large as we can, in the same time update negative product as smaller as we can. Each time looping we need to see if positive product * current value large or negative product * current value large
