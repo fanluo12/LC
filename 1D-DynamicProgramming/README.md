@@ -42,3 +42,7 @@ For loop through string, marked each index as start. For each start index, for l
 
 ## 300. Longest Increasing Subsequence
 Reversely for loop, for each index, for loop from current position to end, once meet larger, update larger position with index number + 1 and update to result for largest value
+
+## 343. Integer Break
+Use arraylist to update result. Initialize 0 and 1 indices as 0 and 1.
+The idea is loopting through from 2 to number, for each number, take 4 as example, we want to know product of (1, 3) larger or product of (2, 2) larger. So for each number, we search from 1 and number - 1 with left and right pointer. Each time we update max product of max(left, dp.get(left) * max(right, dp.get(right)) where dp.get(left or right) indicates this numbers largest product. We can use this product or this number whatever larger
