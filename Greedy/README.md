@@ -40,3 +40,6 @@ For loop string, identify each character's last index with a variable end. In th
 ## 678. Valid Parenthesis String
 Use leftMin and leftMax two variables to update brackets number
 For loop through string, if character is '(', add 1 on two variables. If character is ')', minus 1 on two variables. What we need to do is track leftMax to see if it is less than 0, if so, return false. For leftMin, since may have '*', so once leftMin < 0 reset leftMin to 0. Based on these circumstance we can see the third judge of if statement is that once met '*', leftMin -- and leftMax ++
+
+## 334. Increasing Triplet Subsequence
+Use 2 variables, p1 and p2 which initialize as inf. For loop through array, if less than p1, assign it to p1, else if less than p2, assign it to p2, else return
