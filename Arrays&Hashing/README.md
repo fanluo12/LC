@@ -24,7 +24,7 @@ In outer for loop, when looping each row, initialize 3 sets- row set, columns se
 In inner for loop, check if non-null element can be add to row set(!rowSet.add(board[r][c]) -> return false), check if non-null element can be add to column set(!rowSet.add(board[c][r]) -> return false) and check if non-null element can be add to sub-box set(!sub-box-set.add(board[R][C]))
 How to get R, C for sub-box? Under r and c loop, initialize row = (r/3)*3, col = (r % 3) * 3, then R = row + c / 3, C = col + c % 3
 
-## 49. Group Anagrams && 387. First Unique Character in a String && 389. Find the Difference
+## 49. Group Anagrams && 387. First Unique Character in a String && 389. Find the Difference && ** 395. Longest Substring with At Least K Repeating Characters
 ### 49
 #### Input: strs = ["eat","tea","tan","ate","nat","bat"]
 #### Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
@@ -33,6 +33,9 @@ For each string of strs, we created a character array and assign 26 length to it
 Fill integer array with character of string - 'a' and find first 1 in this array
 ### 389. Find the Difference
 Fill integer array with t[char - 'a'] ++, and s[char - 'a'] --. Then the index with 1 is the one we looking for
+### **395. Longest Substring with At Least K Repeating Characters
+The idea is split array with less than k character, for example, string is aaabccc and k is 3, we split to string arrays [aaa, ccc] to find recursively.
+We first use char array to find frequency of string and initialize a char splitChar as 0. Looping through frequency array and break as soon as we find first character to split. We split string to string array by split() method, and recursively update result max. The result part can be confusing since we compare res(initialize as 0) to function(substring, k). The idea is if we cannot find break split character we simply return to current string length, so this is the end of recursion
 
 # NOT FROM NEETCODE
 ## 283. Move Zeroes
@@ -57,4 +60,4 @@ For loop through array, trying to put nums[i] == i + 1
 Use atan2() is an inbuilt method in Java that is used to return the theta component from the polar coordinate
 
 ## 287. Find the Duplicate Number
-Very fresh method. We want to find duplicate number from array. Array length is n and all number from 1 to n. So we can mark visited number as index, and put index-based element as negative. Then once we meet an element which is negative we can simply find result
+Very fresh method. We want to find duplicate number from array. Array length is n and all number from 1 to n. So we can mark visited number as index, and put index-based element as negative. Then once we meet an element which is negative we can simply find result. 
