@@ -34,3 +34,10 @@ If last element is greater than second last element, then we may not push it int
 ## 32. Longest Valid Parentheses
 Use stack to store indices
 For loop string, once meet '(', push its index to stack. If not '(', if stack is empty then update start index + 1, else compute current longest length
+
+## 94. Decode String
+We cannot use for loop to traverse string since we need substring numbers in stack. We use number stack to store numbers and string stack(push an empty string inside first in case to pop and add other string) to store strings.
+1. While loop through string. If character is number, we need to find the longest number with another while loop and store into number stack.
+2. If character is [, means we need to record computation inside [] and use a new empty string to update. So push this new empty string to string stack
+3. If character is ], means computation finish. We need to pop last string from string stack and how many times from number stack. Use stringbuilde to store exactly times of this string and connect to pop element in string stack(usually empty or last string) and push back to string stack
+4. If character is letter, connect to string stack.pop and push back
