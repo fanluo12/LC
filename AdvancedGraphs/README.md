@@ -25,3 +25,7 @@ Each time we looping we start a new looping through all flights information to f
 ## 207. Course Schedule
 Use list to store all courses. For each pre-course, add its children course to list. Loop through courses, if dfs function return false then return false
 For dfs function, we start to search from first course and mark it as 1--visited. We get its children courses, ie only take children courses you have to take this course, and iterate children courses. Once children course marked 1, means dead loop and return false. If children is 0, which means not visited, dfs from here and when dfs return false simply return false. Finally we mark this course as 2--done visiting
+
+## 399. Evaluate Division
+Use map<String, map<String, Double>> to store current equations. For a/b = 2.0, not only put a:[b:2.0] but also put b[a: 0.5] to map.
+Use DFS function to find each queries results. For DFS function, we need to judge if map contains x or y as key or not, if not return -1. Then we get all divisors(map format)xMap of x. If xMap contains y, then return xMap.get(y). If not, for loop through xMap key sets and use hash set to avoid dead cycle. Use tmp to find key and y's result with DFS function, ie tmp = DFS(key of xMap, y). If cannot depth search which means tmp is -1, continue for other key sets, else return tmp * xMap.get(key)
