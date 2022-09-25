@@ -49,3 +49,6 @@ The idea is loopting through from 2 to number, for each number, take 4 as exampl
 
 ## *368. Largest Divisible Subset
 For loop through array, at each current index, loop through back. If previous index can be divided by current and count[prev] + 1 > count[cur](count array initialized at first. Each looping, count[cur] as 1 to update), we update count[cur] as count[pre] + 1 and set previous array[cur] = pre(previous array initialized at first, used to map cur with pre for the final result). After looping through current index, we can compare with max(initialize as 0), once greater than max, we can assign cur to final index(the last index of largest subset. Of course each time looping we assign -1 to this final index as a sign of end). When we finish loop, we have a final index as last element of result, and while it is not -1, we add nums[index] to arraylist and update index as previous array[index]
+
+## 518. Coin Change II && 377. Combination Sum IV
+Create dp array where length is amount or target + 1 and set 0 index as 1. For loop through all coins or numbers, and start loop from them to target, dp[i] += dp[i - coin]
