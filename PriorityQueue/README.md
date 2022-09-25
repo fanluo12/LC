@@ -22,3 +22,6 @@ Next we use if statement to judge if deque is not empty and peek of deque's 1 in
 
 ## 295. Find Median from Data Stream
 Use two pq to store half of data. PQ1 stores left part data(less) and PQ2 store other halp(larger). PQ1 should descneding order and PQ2 should ascending order. Each time when we add, we put element to PQ1 and poll from PQ1 and add to PQ2. Once PQ2 size greater than PQ1, poll and return back to PQ1 so PQ1 will store 0 or 1 more element than PQ2
+
+## 378. Kth Smallest Element in a Sorted Matrix
+We want [1,5,9,10,11,12,13] from [1,5,9,10,11,12,13,13,15] and pop 13. However if we use minHeap, then we need to pop 1,5,9...until last, but if we use maxHeap, we need to know the length and minus k and pop, it's complicated. So we use minHeap to store -matrix[r][c] and maintains minHeap size as k. Then we simply pop -(-13)
