@@ -1,12 +1,14 @@
-class Solution:
-    def combinationSum4(self, nums: List[int], target: int) -> int:
-        dp = [0] * (target + 1)
-        dp[0] = 1
+class Solution {
+    public int combinationSum4(int[] nums, int target) {
+        int[] dp = new int[target + 1];
+        dp[0] = 1;
         
-        for i in range(1, target + 1):
-            for n in nums:
-                if n <= i:
-                    dp[i] += dp[i - n]
-                    
-        return dp[-1]
-            
+        for (int n: nums) {
+            for (int i = n; i < target + 1; i ++) {
+                dp[i] += dp[i - n];
+            }
+        }
+        
+        return dp[dp.length - 1];
+    }
+}
