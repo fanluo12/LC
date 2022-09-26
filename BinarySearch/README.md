@@ -40,3 +40,7 @@ Use binary search to find square root. Left as 1 and right as x. Each time we fi
 ## 367. Valid Perfect Square
 First remember cannot use mid * mid since stack overflow. So method1 we can use long to represent.
 For method2, to avoid stack overflow, we need to replace mid * mid with tmp = num / mid and compare tmp and mid to see if they equal or not. But remember, int tmp can be fake since 5 /2 = 2, so we need to add remainder to judge together
+
+## ** 410. Split Array Largest Sum
+We use two extreme situations to perform binary search. The largest sum is the sum of all elements which no cut and smallest sum(although comparing to largest solution, it is the largest number of array) is the largest element which divide all array elements. So we take these two as left and right to perform binary search. Each time we get a middle sum and we want to use a helper function to see how many subarrays here when sum is mid. If this helper function returns a smaller value than m meaning we need more cut and right is responsible for (n - 1) cut(largest cut number), we need to shrink right to get more cut.
+For the helper function, we need to find how many sub-arrays here where largest sum less than mid. So we initialize sum as 0 and count as 0(sub-arrays number). We loop through nums array and update sum to sum variable, if sum <= mid keep adding, else meaning sub-array sum reaches mid and cut + 1. So assign new coming element to sum for new searching and count ++. We finally return count
