@@ -63,3 +63,6 @@ Use atan2() is an inbuilt method in Java that is used to return the theta compon
 
 ## 287. Find the Duplicate Number
 Very fresh method. We want to find duplicate number from array. Array length is n and all number from 1 to n. So we can mark visited number as index, and put index-based element as negative. Then once we meet an element which is negative we can simply find result. 
+
+## 409. Longest Palindrome
+We don't need to know the permutation of palindrome, we just need a hash set to store duplicate element. Loop through string, once character in set, means we have two of them and can make palindrome, we remove them and update count. If hash set remains element, result would be odd palindrome(count * 2 + 1) else count * 2
