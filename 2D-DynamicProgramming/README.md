@@ -25,3 +25,7 @@ Normal for loop through row and column from (1, 1) place. Once s[i - 1] == p[j -
 
 ## 64. Minimum Path Sum
 Use prevSum variable to record previous sum. For loop through array, if row and col are both 0, initialize prevSum as 0. If row == 0, prevSum equals to last column, which is array[r][c - 1]. Same for col. If not (0, 0) or first row or first col, prevSum = min((r-1, c), (r, c-1)). Update array[r][c] = prevSum + grid[r][c]
+
+## 403. Frog Jump
+Use 2D boolean array which row is n and col is n + 1. Column represent for each unit, how far it can goes, so for the last index the farthest would be n + 1. We initialize dp[0][1] = true representing 0 index can reach 1 index.
+For loop(int end) through all indices, for each index, use nested for loop(int start) traverse from 0 to i - 1. Each time calculate distance between start and end. If difference less than 1 or greater than length or dp[start][distance] is not true(meaning start cannot reach end), we use continue to break this single loop. If we can pass the judgement, we mark dp[end][distance] as true since this is how end can go so far(at least distance since last reach end with distance and end can at least go this distance). Of course we need to mark dp[end][distance - 1](if distance greater than 1) and dp[end][distance + 1](if distance less than length). After marking, if end reaches last index, return true
