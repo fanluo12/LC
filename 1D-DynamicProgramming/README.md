@@ -55,3 +55,9 @@ Create dp array where length is amount or target + 1 and set 0 index as 1. For l
 
 ## * 416. Partition Equal Subset Sum
 Take [2,2,3,5] as example, it cannot been paritioned. The target we looking for is 6 so we created a boolean array which length is target + 1(last index is exactly 6). For loop through each element, for each element, we use another loop to traverse from [target, cur element] and fill dp[i] = dp[i - outer for loop element] || dp[i]. The idea is mark changeable number as true. So the first loop we take 2 and only dp[2] is true meaning 2 can be changeable. Second we take 2 for loop, since last time 2 been marked true, and this time dp[4] can be mark true. So the same with dp[3] and dp[5], and dp[6] is false meaning we cannot parition
+
+## 472. Concatenated Words
+1. We sort words array with ascending order of each string length
+2. We initialize a empty string hash set for adding
+3. Loop through words array, if satisfy boolean helper function, then add to result array list. Each time finish helper dfs function add current word to set
+4. For dfs function, first we need to judge if set is empty or not for first case. If empty return false. Then we judge ending criteria ie start index reaches current word length, if so return true. Next we loop through end index from current index + 1 to string.length() + 1, if set contains substring of[start, end] and satisfy dfs end index, return true
