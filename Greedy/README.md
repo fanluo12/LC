@@ -41,5 +41,8 @@ For loop string, identify each character's last index with a variable end. In th
 Use leftMin and leftMax two variables to update brackets number
 For loop through string, if character is '(', add 1 on two variables. If character is ')', minus 1 on two variables. What we need to do is track leftMax to see if it is less than 0, if so, return false. For leftMin, since may have '*', so once leftMin < 0 reset leftMin to 0. Based on these circumstance we can see the third judge of if statement is that once met '*', leftMin -- and leftMax ++
 
-## 334. Increasing Triplet Subsequence
+## 334. Increasing Triplet Subsequence && 414. Third Maximum Number
+### 334
 Use 2 variables, p1 and p2 which initialize as inf. For loop through array, if less than p1, assign it to p1, else if less than p2, assign it to p2, else return
+### 414
+Use 3 variables, first, second and third as long -inf. For loop through array, if greater than first, assign second to third, first to second and nums[i] to first. If greater than seoncd and less than first, assign second to third and nums[i] to second. If greater than third and less than second, assign nums[i] to third 
