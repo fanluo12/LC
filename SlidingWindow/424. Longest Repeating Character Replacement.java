@@ -16,3 +16,24 @@ class Solution {
         return res;
     }
 }
+// faster and more concise
+class Solution2 {
+    public int characterReplacement(String s, int k) {
+        int[] count = new int[26];
+        int start = 0, maxCount = 0, maxLength = 0;
+        
+        for (int end = 0; end < s.length(); end ++) {
+            count[s.charAt(end) - 'A'] ++;
+            maxCount = Math.max(maxCount, count[s.charAt(end) - 'A']);
+            // end - start + 1 is the current window size, if it minus maxCount == 0 means window filled with same characters
+            // however, if windowSize - maxCount > 0 means OTHER characrers are mixed. If it is greater than k, means we need to remove some of them until k to shrink window
+            while (end - start + 1 - maxCount > k) {
+                count[s.charAt(start) - 'A'] --;
+                start ++;
+            }
+            // The shrinked window may invalid at some points, but it doesn't matter since it was already valid in the begining part before other where in string
+            maxLength = Math.max(maxLength, end - start + 1);
+        }
+        return maxLength;
+    }
+}
