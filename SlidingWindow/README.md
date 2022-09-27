@@ -31,3 +31,6 @@ Use numZeros to count 0 of nums array.
 Use left = 0 to represent left window and for loop through right window of array
 Once meet 0 numZeros ++. Once numZeros greater than k, update left window. In the meantime we need to check if left window is 0 then numZeros --
 Update max while numZeros <= k
+
+## 438. Find All Anagrams in a String
+Use 26-digit integer array to represent p. Loop through s with right window and put character to another 26-digit array. Once window size is equal to p length(left window initialize as 0), we judge if Arrays.equals(two integer array) and update result to arraylist. If not equal but window size is p length, update left window and remove character of left window
