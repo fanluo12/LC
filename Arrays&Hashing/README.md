@@ -61,8 +61,11 @@ For loop through array, trying to put nums[i] == i + 1
 ## 149. Max Points on a Line
 Use atan2() is an inbuilt method in Java that is used to return the theta component from the polar coordinate
 
-## 287. Find the Duplicate Number
+## 287. Find the Duplicate Number && 448. Find All Numbers Disappeared in an Array
+### 287
 Very fresh method. We want to find duplicate number from array. Array length is n and all number from 1 to n. So we can mark visited number as index, and put index-based element as negative. Then once we meet an element which is negative we can simply find result. 
+### 446
+Same as 287, we take absolutely value of each number as index, and num[index] = -Math.abs(nums[index]) since there may duplicate number and may cause negative value back to positive value for intervention. Then we use array list to record positive value
 
 ## 409. Longest Palindrome
 We don't need to know the permutation of palindrome, we just need a hash set to store duplicate element. Loop through string, once character in set, means we have two of them and can make palindrome, we remove them and update count. If hash set remains element, result would be odd palindrome(count * 2 + 1) else count * 2
