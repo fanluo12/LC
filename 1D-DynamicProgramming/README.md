@@ -52,3 +52,6 @@ For loop through array, at each current index, loop through back. If previous in
 
 ## 518. Coin Change II && 377. Combination Sum IV
 Create dp array where length is amount or target + 1 and set 0 index as 1. For loop through all coins or numbers, and start loop from them to target, dp[i] += dp[i - coin]
+
+## * 416. Partition Equal Subset Sum
+Take [2,2,3,5] as example, it cannot been paritioned. The target we looking for is 6 so we created a boolean array which length is target + 1(last index is exactly 6). For loop through each element, for each element, we use another loop to traverse from [target, cur element] and fill dp[i] = dp[i - outer for loop element] || dp[i]. The idea is mark changeable number as true. So the first loop we take 2 and only dp[2] is true meaning 2 can be changeable. Second we take 2 for loop, since last time 2 been marked true, and this time dp[4] can be mark true. So the same with dp[3] and dp[5], and dp[6] is false meaning we cannot parition
