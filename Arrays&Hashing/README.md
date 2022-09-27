@@ -69,3 +69,6 @@ Same as 287, we take absolutely value of each number as index, and num[index] = 
 
 ## 409. Longest Palindrome
 We don't need to know the permutation of palindrome, we just need a hash set to store duplicate element. Loop through string, once character in set, means we have two of them and can make palindrome, we remove them and update count. If hash set remains element, result would be odd palindrome(count * 2 + 1) else count * 2
+
+## 454. 4Sum II
+Use hash map to store the frequency of sum for nums1 and nums2. Loop through nums3 and nested loop through nums4, if their -sum exists in map, update final result
