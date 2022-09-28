@@ -6,3 +6,6 @@ Backtrack to generate parentheses. In backtrack function, use two parameters lef
 ## 93. Restore IP Addresses
 Backtracking with current index, dots and current string. While current index reaches end and dots reaches 4, final list add result and return.
 Take current index and left window of substring, for loop from current index until min(cur + 3, s.length()) to avoid "0.0.0.0" case. In for loop, judge if no leading 0 and integer of substring less than 255 and backtrack
+
+## 473. Matchsticks to Square && 698. Partition to K Equal Sum Subsets
+### 698. Partition to K Equal Sum Subsets
