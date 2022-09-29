@@ -43,3 +43,6 @@ For loop through string, for each index initiate main string pointer and substri
 1. Reverse string function(simply use left and right pointer to swap string) to reverse whole string
 2. For reversed string, reverse words inside with pointers. Use left and right pointer to jump spaces and update right to left place and iterate stirng, then swap with function 1
 3. Remove spaces function. Use left and right pointers to jump leading spaces, substitute and update left to strings on right. Remove middle multiple spaces and connect next string with ' '
+
+## 611. Valid Triangle Number
+Sort array first and loop through from back. When looping index, find other two edge as left(0) and right(i - 1). Use while loop to update left and right. If left and right sum greater than current edge, then all the combination between them are valid results so final result add right - left and update right. Else update left
