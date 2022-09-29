@@ -72,3 +72,6 @@ We don't need to know the permutation of palindrome, we just need a hash set to 
 
 ## 454. 4Sum II
 Use hash map to store the frequency of sum for nums1 and nums2. Loop through nums3 and nested loop through nums4, if their -sum exists in map, update final result
+
+## 525. Contiguous Array
+For loop through nums, use hash map to update current sum(if meet 0, minus 1, if meet 1, add 1). Once current sum is 0, update max length as i + 1. If map contains current sum, update max of current index minus map.get(curSum) and max length
