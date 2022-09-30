@@ -46,3 +46,6 @@ For loop through string, for each index initiate main string pointer and substri
 
 ## 611. Valid Triangle Number
 Sort array first and loop through from back. When looping index, find other two edge as left(0) and right(i - 1). Use while loop to update left and right. If left and right sum greater than current edge, then all the combination between them are valid results so final result add right - left and update right. Else update left
+
+## 680. Valid Palindrome II
+Use isPalindrome helper function to judge string and substring. Use two pointers while loop, once left and right not equals, for example, "cbbcc" is a vliad when removing one characters and left ++ and right -- for c and c equal. Then we have bbc. Since outside part already palindrome, so for inside part, bbc, we need to judge if bb or bc could be palindrome or not which only remove one character
