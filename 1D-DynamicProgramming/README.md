@@ -10,8 +10,11 @@ Create dp array which additional place to last and set it as 0. Then from dp.len
 ## 198. House Robber
 We cannot rob adjacent house, so we set a dp array of nums length. We set index 0 as nums[0] and index 1 as maximum of nums[1] and nums[0] since if we iterate through from index 2, if index 1 and 2 are same small our result would small. So index 1 MUST set as max of index 0 and 1
 
-## 213. House Robber II
+## 213. House Robber II && 740. Delete and Earn
+### 213
 For loop through from 0 to -2 index and from 1 to -1 index respectively to update two results and compare
+### 740
+Same as house robbers, we need to compare rob current index or rob previous and next. Use frequency array to store each element total sum and dp array to loop. Initialize dp[0] and dp[1], then from index 2, dp[i] is the max of freq[i] + dp[i -2] and dp[i - 1]
 
 ## 5. Longest Palindromic Substring
 For loop through string and at each index, we start to search palindrome of left and right direction. Since palindrome has odd and even length, so we set left pointer as i and right pointer as i for odd length palindrome and left as i, right as i + 1 for even length palindrome. 
