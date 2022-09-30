@@ -49,3 +49,7 @@ Use 3 variables, first, second and third as long -inf. For loop through array, i
 
 ## 605. Can Place Flowers
 Expand original array for 2 place--one for head and one for tail and populate rest with original value. In this case we count expanded flower bed to see how many we can grow. Looping new expanded array, we judge if current position is 0 and its previous and next are also 0, in this case we can plant and minus n. We finally compare if n less than 0
+
+## 665. Non-decreasing Array
+case 1: [1, 7, 3, 4], at index 2 position, i-2 position can form a non decreasing with i, so we want to change 7 to make i-2, i-1, i non-decreasing for now
+case 2: [4, 7, 3, 9], at index 2 position, since i - 2 is greater than i and [i-2, i -1] is non-decreasing, so we want to change i to i-1 to make i-2,i-1,i non-decreasing
