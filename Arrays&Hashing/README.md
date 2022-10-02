@@ -75,3 +75,7 @@ Use hash map to store the frequency of sum for nums1 and nums2. Loop through num
 
 ## 525. Contiguous Array
 For loop through nums, use hash map to update current sum(if meet 0, minus 1, if meet 1, add 1). Once current sum is 0, update max length as i + 1. If map contains current sum, update max of current index minus map.get(curSum) and max length
+
+## 763. Partition Labels
+1. Use hash map to store farthest index of each character
+2. For loop through string, each time variable size ++ and get farthest index of current character. Once looping index is same as farthest, add to array list and initial farthest index
