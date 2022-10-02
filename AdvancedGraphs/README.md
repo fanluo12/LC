@@ -29,3 +29,7 @@ For dfs function, we start to search from first course and mark it as 1--visited
 ## 399. Evaluate Division
 Use map<String, map<String, Double>> to store current equations. For a/b = 2.0, not only put a:[b:2.0] but also put b[a: 0.5] to map.
 Use DFS function to find each queries results. For DFS function, we need to judge if map contains x or y as key or not, if not return -1. Then we get all divisors(map format)xMap of x. If xMap contains y, then return xMap.get(y). If not, for loop through xMap key sets and use hash set to avoid dead cycle. Use tmp to find key and y's result with DFS function, ie tmp = DFS(key of xMap, y). If cannot depth search which means tmp is -1, continue for other key sets, else return tmp * xMap.get(key)
+
+## 863. All Nodes Distance K in Binary Tree
+1. Use helper function to convert tree to graph, ie put node as key to map, and its parent and children to array list as values.
+2. Use BFS to search. First use queue to store target, and minus k each time when polling. While polling, find values from map and add to queue
