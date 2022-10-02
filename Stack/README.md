@@ -41,3 +41,6 @@ We cannot use for loop to traverse string since we need substring numbers in sta
 2. If character is [, means we need to record computation inside [] and use a new empty string to update. So push this new empty string to string stack
 3. If character is ], means computation finish. We need to pop last string from string stack and how many times from number stack. Use stringbuilde to store exactly times of this string and connect to pop element in string stack(usually empty or last string) and push back to string stack
 4. If character is letter, connect to string stack.pop and push back
+
+## 841. Keys and Rooms
+Use stack to store room number. Each time pop last room and get all keys of this room using rooms.get(room), and add to stack if not visited. We finally check if visited.size() == rooms.size()
