@@ -33,3 +33,6 @@ Use DFS function to find each queries results. For DFS function, we need to judg
 ## 863. All Nodes Distance K in Binary Tree
 1. Use helper function to convert tree to graph, ie put node as key to map, and its parent and children to array list as values.
 2. Use BFS to search. First use queue to store target, and minus k each time when polling. While polling, find values from map and add to queue
+
+## 934. Shortest Bridge
+We first loop through matrix, once we find a island, we use dfs function to mark neighbor as true(dfs helper function will mark island 4 directions of boolean array as true), then we judge and return by bfs function(bfs function will add true row and column of boolean array to queue, and use queue to find each true neightbor's 4 directions and each time searching add 1 to result. Once searched that new island is 1 simply return result)
