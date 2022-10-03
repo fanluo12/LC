@@ -34,3 +34,6 @@ Update max while numZeros <= k
 
 ## 438. Find All Anagrams in a String
 Use 26-digit integer array to represent p. Loop through s with right window and put character to another 26-digit array. Once window size is equal to p length(left window initialize as 0), we judge if Arrays.equals(two integer array) and update result to arraylist. If not equal but window size is p length, update left window and remove character of left window
+
+## 904. Fruit Into Baskets
+In this question, we have to select two different number in array with largest distance between them. So we use left and right pointer both from 0 representing sliding window. We use hashmap to store index of each elemtn, once hashmap size greater than 2, we find mininum of values which would give us a index of window first element, then left window updated to index + 1. Outside we update final result of window size and update right pointer
