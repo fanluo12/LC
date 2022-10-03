@@ -56,3 +56,8 @@ case 2: [4, 7, 3, 9], at index 2 position, since i - 2 is greater than i and [i-
 
 ## 881. Boats to Save People
 Want minimum of boats, so we use greedy way. We sort array first and find 0 and last index as left and right pointers. We use while loop to update left and right pointer, if left and right sum less than limit, update left pointer, else minus right pointer and add 1 to result
+
+## 926. Flip String to Monotone Increasing
+1. Find all zeros, ie max zeros we need to flip, but this is not a optimally answer
+2. Set one's number as 0, result as zeroes, but we need to reduce result
+3. Loop through array, once meet '0', zeros - 1, means there are still zero's we need to flip, once meet '1', one +1, then update min(result, one + zeros)
