@@ -49,3 +49,6 @@ Sort array first and loop through from back. When looping index, find other two 
 
 ## 680. Valid Palindrome II
 Use isPalindrome helper function to judge string and substring. Use two pointers while loop, once left and right not equals, for example, "cbbcc" is a vliad when removing one characters and left ++ and right -- for c and c equal. Then we have bbc. Since outside part already palindrome, so for inside part, bbc, we need to judge if bb or bc could be palindrome or not which only remove one character
+
+## 941. Valid Mountain Array
+Update left and right pointer respectively if left is ascending order and right is ascending also. Judge if left and right are equal
