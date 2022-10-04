@@ -65,3 +65,6 @@ Want minimum of boats, so we use greedy way. We sort array first and find 0 and 
 ## 1007. Minimum Domino Rotations For Equal Row
 1. Count frequency array for each element in both tops and bottoms. When looping, when tops[i] == bottoms[i], plus 1 for union array
 2. If tops[i] + bottoms[i](i -> 1-6) - unions[i] == length, this must be the result. We simply return smaller one minus union of this number
+
+## 1029. Two City Scheduling
+Create 3D array where arr[i][0] is 2nd city cost - 1st cost, arr[1] = 1st city cost, arr[2] = 2nd city cost. Sort 3D array with first index ascending order, meaning 2nd city cost is less than first. Looping through array, if current less than half place, add 2nd cost to result, else add 1st cost to result
