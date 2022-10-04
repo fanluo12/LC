@@ -61,3 +61,7 @@ Want minimum of boats, so we use greedy way. We sort array first and find 0 and 
 1. Find all zeros, ie max zeros we need to flip, but this is not a optimally answer
 2. Set one's number as 0, result as zeroes, but we need to reduce result
 3. Loop through array, once meet '0', zeros - 1, means there are still zero's we need to flip, once meet '1', one +1, then update min(result, one + zeros)
+
+## 1007. Minimum Domino Rotations For Equal Row
+1. Count frequency array for each element in both tops and bottoms. When looping, when tops[i] == bottoms[i], plus 1 for union array
+2. If tops[i] + bottoms[i](i -> 1-6) - unions[i] == length, this must be the result. We simply return smaller one minus union of this number
