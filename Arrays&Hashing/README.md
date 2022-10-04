@@ -79,3 +79,7 @@ For loop through nums, use hash map to update current sum(if meet 0, minus 1, if
 ## 763. Partition Labels
 1. Use hash map to store farthest index of each character
 2. For loop through string, each time variable size ++ and get farthest index of current character. Once looping index is same as farthest, add to array list and initial farthest index
+
+## 953. Verifying an Alien Dictionary
+The question give the order of letters, and words in array where words should in ascending order(first compare 1st letter, if same , then compare 2nd, 3rd...so on and so far). So we use hashmap to store the order of each letter and use a helper function to compare any two words in array in for loop.
+For the helper function, we first get length of each two word, and looping them together. Once we meet two position which not same, if first letter greater than 2nd return fasle...After comparing, even they same for temporary, we still need to consider length difference situation, ie app and apple, so the length defined works now, we compare length and return false if longer one comes ahead
