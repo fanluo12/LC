@@ -64,3 +64,8 @@ Take [2,2,3,5] as example, it cannot been paritioned. The target we looking for 
 2. We initialize a empty string hash set for adding
 3. Loop through words array, if satisfy boolean helper function, then add to result array list. Each time finish helper dfs function add current word to set
 4. For dfs function, first we need to judge if set is empty or not for first case. If empty return false. Then we judge ending criteria ie start index reaches current word length, if so return true. Next we loop through end index from current index + 1 to string.length() + 1, if set contains substring of[start, end] and satisfy dfs end index, return true
+
+## 983. Minimum Cost For Tickets
+1. Create dp array where length equals last travel day of days array plus 1
+2. Creat boolean array where each travel day of days array marked true
+3. Looping from 1 to last travel day of dp array, if it is false in boolean array, then assign previous value to current(dp[i] = dp[i -1]). If it is travel day, then dp[i] = min(dp[i - 1] + cost[0], dp[i - 7] + cost[1], dp[i - 30] + cost[2]), note since i minus 1 or 7 or 30 may less than 0, so we use dp[max(0,i - 7 or 1 or 30)]
