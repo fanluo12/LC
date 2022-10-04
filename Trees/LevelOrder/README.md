@@ -4,3 +4,6 @@ Use two stack to store. First stack pop element, and push its right and left to 
 
 ## 107. Binary Tree Level Order Traversal II
 Same as level order traversal, only addFirst for each level
+
+## 958. Check Completeness of a Binary Tree
+Level order traversal each level, once meet null node, we mark seenEmpty(boolean variable) as true and break single loop. Once we meet a non-node and seenEmpty is true, means after null node there is other node, we return false
