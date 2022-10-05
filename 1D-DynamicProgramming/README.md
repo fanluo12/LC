@@ -69,3 +69,7 @@ Take [2,2,3,5] as example, it cannot been paritioned. The target we looking for 
 1. Create dp array where length equals last travel day of days array plus 1
 2. Creat boolean array where each travel day of days array marked true
 3. Looping from 1 to last travel day of dp array, if it is false in boolean array, then assign previous value to current(dp[i] = dp[i -1]). If it is travel day, then dp[i] = min(dp[i - 1] + cost[0], dp[i - 7] + cost[1], dp[i - 30] + cost[2]), note since i minus 1 or 7 or 30 may less than 0, so we use dp[max(0,i - 7 or 1 or 30)]
+
+## **1043. Partition Array for Maximum Sum
+1. Create dp array representing each index current max partition sum. We first find for first k element, each step max sum. For example, arr = [1,15,7,9,2,5,10], k = 3, so dp = [1, 30, 45,...]
+2. After we find first k max sum, we loop from k to the end. Each time looping, we define a variable called partitionMax. This would find max value of k window of [current - k, current] which means we need to look back to see the max of previous(including current). So we nest loop k times from 0, and partitionMax would update by max arr[i - j] in nested loop ]. For each time searching partitionMax, we also see if we need to change previous sum. We find previous sum by dp[i - j - 1](kind of like prefix sum), we update current index with max of itself and previous sum + (j + 1) * partitionMax
