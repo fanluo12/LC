@@ -32,3 +32,7 @@ For loop(int end) through all indices, for each index, use nested for loop(int s
 
 ## 718. Maximum Length of Repeated Subarray
 Create 2D dp array with extra row and column. Looping row and column, if i - 1 == j -1, then dp[i][j] = dp[i - 1][j - 1] + 1
+
+## 1277. Count Square Submatrices with All Ones
+1. Count first row and column of single square
+2. DP way. Start looping from (1, 1) until end, dp[i][j] = min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1])
