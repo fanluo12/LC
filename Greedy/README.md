@@ -68,3 +68,7 @@ Want minimum of boats, so we use greedy way. We sort array first and find 0 and 
 
 ## 1029. Two City Scheduling
 Create 3D array where arr[i][0] is 2nd city cost - 1st cost, arr[1] = 1st city cost, arr[2] = 2nd city cost. Sort 3D array with first index ascending order, meaning 2nd city cost is less than first. Looping through array, if current less than half place, add 2nd cost to result, else add 1st cost to result
+
+## 1094. Car Pooling
+1. Create an array representing all the pick up and drop locations. Loop through trips array, for trips[i], take trips[i][1], trips[i][2] as index from and to, then array[from] += trips[i][0], array[to] -= trips[i][0]
+2. Define variable passenger number to 0. Looping through array, add current index number, ie how many passengers should in/out. Once passenger number greater than capacity, return false
