@@ -17,3 +17,5 @@ For loop through from 2, if boolean[i] is false, update final result and loop th
 ## 523. Continuous Subarray Sum
 1. For example, [23,2,4,...] and k = 6. 23 % 6 = 5, while after adding 2 and 4, 23 become 29 and 29 % 6 is also 5. So if remainder happens twice, means we already find a multiple of k. So we use hash map to store remainder of updating sum and index. Why index? Because our continuous array should be greater than 2, so if new index minus map.get(remainder) greater than 1, we can return true.
 2. Note hash map need to be initialize as key = 0 and value = -1, so in this case when we updating sum, if sum % k == 0, we don't need to judge if map contains key or not
+
+## 1260. Shift 2D Grid
