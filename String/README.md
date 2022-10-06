@@ -39,3 +39,6 @@ s          dedcba
 Convert int to string
 1. Integer.toString(int)
 2. String.valueOf(int)
+
+## 1221. Split a String in Balanced Strings
+We only need to count L and R and update plus 1 to result when they are equal. If previous results are equal, even if upcoming combination equal, it would also work
