@@ -25,3 +25,26 @@ class Solution {
         return arr;
     }
 }
+
+// method 2
+class Solution2 {
+    public List<List<Integer>> shiftGrid(int[][] grid, int k) {
+        int m = grid.length, n = grid[0].length;
+        k %= (m * n);
+        
+        int begin = m * n - k;
+        
+        int r = 0;
+        List<List<Integer>> res = new ArrayList<>();
+        while (r < m * n) {
+            List<Integer> row = new ArrayList<>();
+            for (int c = 0; c < n; c ++) {
+                int index = (begin + r) % (m * n);
+                row.add(grid[index / n][index % n]);
+                r ++;
+            }
+            res.add(row);
+        }
+        return res;
+    }
+}
