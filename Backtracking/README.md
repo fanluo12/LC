@@ -9,3 +9,8 @@ Take current index and left window of substring, for loop from current index unt
 
 ## 473. Matchsticks to Square && 698. Partition to K Equal Sum Subsets
 ### 698. Partition to K Equal Sum Subsets
+
+## 1239. Maximum Length of a Concatenated String with Unique Characters
+1. Define global variable result
+2. Backtrack helper function, first judge if there is no duplicate for current concatenation string with helper function and update max length. Next if index reaches end or contains duplicate, return. Then for loop through array list, concat strings to backtrack
+3. Define duplicate judgement function, input current concat string and use letter array to represent. If letter array digit more than 1 then return false
