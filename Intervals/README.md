@@ -27,3 +27,7 @@ While Loop through queries. For each q of queries, use priority queue(saving arr
 When first while loop stops, means q is less than new intervals[0], in this time we need to pop until the smallest interval length. Second while loop goes under circumstance that pq is not empty and pq.peek()[1] is less than q(exclude case like q = 100 while pq = ([4, 4]), in this case no interval could query q), pop pq. Finally use HashMap to put q and pq.peek()[1] if pq is not empty else put -1.
 
 We need to clone queries at first and query each q with map.
+
+## 1288. Remove Covered Intervals
+1. Sort intervals with left ascending orders if left boundary different. Else sort with right boundary descending order
+2. Deinfe right = 0. For loop through all intervals, if interval right boundary greater than right, assign it to right and update result
