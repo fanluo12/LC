@@ -36,3 +36,8 @@ Use DFS function to find each queries results. For DFS function, we need to judg
 
 ## 934. Shortest Bridge
 We first loop through matrix, once we find a island, we use dfs function to mark neighbor as true(dfs helper function will mark island 4 directions of boolean array as true), then we judge and return by bfs function(bfs function will add true row and column of boolean array to queue, and use queue to find each true neightbor's 4 directions and each time searching add 1 to result. Once searched that new island is 1 simply return result)
+
+## 1293. Shortest Path in a Grid with Obstacles Elimination
+1. Use queue to store (row, col, steps) and initialze queue with [0, 0, 0]
+2. Use integer array representing visited optimal way, initialize (0, 0) as 0 and rest as inf
+3. BFS method with queue, each time poll array out. Once row and col reaches end, return steps. For 4 directions, continue when out of boundary, continue when steps + (new row, new col) greater than k, continue when there is optimal result for new row and new col(visited[new row][new col] <= new k). Then assign (new row, new col, new k) to queue and visited[new row][new col] = new k
