@@ -95,3 +95,6 @@ No need stack or some special data structures. We define a right max variable as
 
 ## 1365. How Many Numbers Are Smaller Than the Current Number
 Make frequency array of all elements in nums. Then update each index of adding previous value. Create a new result array, for each element in nums, take it as index in frequency array, and find previous pisition. Note when nums[i] = 0 we cannot create -1, simpy add 0 to result
+
+## 1389. Create Target Array in the Given Order
+ArrayList can add(index, element) to specific position
