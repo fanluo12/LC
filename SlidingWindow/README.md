@@ -37,3 +37,6 @@ Use 26-digit integer array to represent p. Loop through s with right window and 
 
 ## 904. Fruit Into Baskets
 In this question, we have to select two different number in array with largest distance between them. So we use left and right pointer both from 0 representing sliding window. We use hashmap to store index of each elemtn, once hashmap size greater than 2, we find mininum of values which would give us a index of window first element, then left window updated to index + 1. Outside we update final result of window size and update right pointer
+
+## 1423. Maximum Points You Can Obtain from Cards
+Take [0,1,2,3,4,5,6,7,8] and k = 3 as example. First we compute sum of first k, ie [0,1,2],3,4,5,6,7,8, then we slide window on left direction, window becomes 0,1],2,3,4,5,6,7,[8 and update max sum
