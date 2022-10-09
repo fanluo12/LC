@@ -92,3 +92,6 @@ For the helper function, we first get length of each two word, and looping them 
 
 ## 1299. Replace Elements with Greatest Element on Right Side
 No need stack or some special data structures. We define a right max variable as -1, and loop through array from back. When traversing, we define new max value which is the max of right max and arr[i], and set arr[i] = right max, right max = new max
+
+## 1365. How Many Numbers Are Smaller Than the Current Number
+Make frequency array of all elements in nums. Then update each index of adding previous value. Create a new result array, for each element in nums, take it as index in frequency array, and find previous pisition. Note when nums[i] = 0 we cannot create -1, simpy add 0 to result
