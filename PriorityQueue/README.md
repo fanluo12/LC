@@ -25,3 +25,8 @@ Use two pq to store half of data. PQ1 stores left part data(less) and PQ2 store 
 
 ## 378. Kth Smallest Element in a Sorted Matrix
 We want [1,5,9,10,11,12,13] from [1,5,9,10,11,12,13,13,15] and pop 13. However if we use minHeap, then we need to pop 1,5,9...until last, but if we use maxHeap, we need to know the length and minus k and pop, it's complicated. So we use minHeap to store -matrix[r][c] and maintains minHeap size as k. Then we simply pop -(-13)
+
+## 1405. Longest Happy String && 767. Reorganize String
+1. Use hashmap to store frequency of characters
+2. Use stringbuilder to track current string
+3. Polling entry map from pq, judge the length of stringbuilder, if near the boundary criteria, check if pq is empty, break if it is. Then poll another entry, offer back if second count-- still not 0. If not near boundary criteria, count--, then check count is 0 or not to decide offer back
