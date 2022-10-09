@@ -41,3 +41,8 @@ We first loop through matrix, once we find a island, we use dfs function to mark
 1. Use queue to store (row, col, steps) and initialze queue with [0, 0, 0]
 2. Use integer array representing visited optimal way, initialize (0, 0) as 0 and rest as inf
 3. BFS method with queue, each time poll array out. Once row and col reaches end, return steps. For 4 directions, continue when out of boundary, continue when steps + (new row, new col) greater than k, continue when there is optimal result for new row and new col(visited[new row][new col] <= new k). Then assign (new row, new col, new k) to queue and visited[new row][new col] = new k
+
+## 1376. Time Needed to Inform All Employees
+We can either BFS or DFS
+1. For both method, first we need to create a hashmap which store key: manager[i], value: list of i, ie subordinates
+2. Use queue to store pair (headId, time which initialize as 0). Do BFS search, each time when we poll out, we update result time with max of itself and polled time. Then we get list of current polled manage level by map, and add back to subordiates of list, and cumulated time to queue again
