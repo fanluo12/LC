@@ -46,3 +46,6 @@ We first loop through matrix, once we find a island, we use dfs function to mark
 We can either BFS or DFS
 1. For both method, first we need to create a hashmap which store key: manager[i], value: list of i, ie subordinates
 2. Use queue to store pair (headId, time which initialize as 0). Do BFS search, each time when we poll out, we update result time with max of itself and polled time. Then we get list of current polled manage level by map, and add back to subordiates of list, and cumulated time to queue again
+
+## 1466. Reorder Routes to Make All Paths Lead to the City Zero
+We store all the (from, to) to hashmap. If direction is right, we store [to, 1] as value of from since if we changes back this route it will update 1 to result. So for the reverse direction we will sotre [from, 0] since we don't need to reverse. We use hashset to start dfs searching from begin city. At dfs function, we first add city to hashset, and for loop through all the connected city pairs in hashmap, add its route value to result
