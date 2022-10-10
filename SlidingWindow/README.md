@@ -40,3 +40,7 @@ In this question, we have to select two different number in array with largest d
 
 ## 1423. Maximum Points You Can Obtain from Cards
 Take [0,1,2,3,4,5,6,7,8] and k = 3 as example. First we compute sum of first k, ie [0,1,2],3,4,5,6,7,8, then we slide window on left direction, window becomes 0,1],2,3,4,5,6,7,[8 and update max sum
+
+## 1838. Frequency of the Most Frequent Element
+1. Sort array first. Initiate left and right window from 0 index and temporary sum as 0
+2. Update right window and sum. Once num[right] * length for now > sum + k, meaning if we change all numbers in [left, right] window to nums[right], there wou't be enough k for it, so we need to update left window
