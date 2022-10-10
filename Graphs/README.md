@@ -43,3 +43,7 @@ Finally loop through matrix, put 1 to 0, put 3 to 1 and put 2 to 1
 
 ## 463. Island Perimeter
 Loop through matrix, if matrix[r][c] == 1, result +4. If previous row or columns is also 1, then two of them connected would have a overlapped edge, so -2 if these situations
+
+
+## 1905. Count Sub Islands
+We want to know grid2 islands are sub islands of grid1, first we traverse two grids, once grid1[r][c] is water and grid2[r][c] is land, we use dfs function to convert grid2[r][c] and neighbor islands as water, ie 0. After this we can simply traverse two grids and find union of them
