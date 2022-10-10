@@ -48,3 +48,8 @@ For the helper function, we need to find how many sub-arrays here where largest 
 ## 1300. Sum of Mutated Array Closest to Target
 1. Find the max and sum of array. If sum == target, then return max value of array
 2. Use min = 0 and max to binary search, each time when we find mid, we use helpepr function to get mutated sum of array(this would calculate sum of array when value greater than mid would all counts as mid). If this mutated sum > target, max = mid - 1, else min = mid + 1. After we update max or min, we update difference of mutated sum and target. If this difference is less than previous difference or equal but mid is less than result(initialize as 1), we update result as mid and difference as mutated sum - target
+
+## **1898. Maximum Number of Removable Characters
+1. We create char array to modify removed characters
+2. We use binary search to find mid, ie. how many characters we remove this round. When we find mid, we substitute on char array with '*'
+3. After removing those characters, we use helper function to check p is subsequence of char array. If so, meaning first mid element worked, now we focus on[mid + 1, right] range, else we set back of removed characters and set right to mid - 1
