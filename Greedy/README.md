@@ -72,3 +72,7 @@ Create 3D array where arr[i][0] is 2nd city cost - 1st cost, arr[1] = 1st city c
 ## 1094. Car Pooling
 1. Create an array representing all the pick up and drop locations. Loop through trips array, for trips[i], take trips[i][1], trips[i][2] as index from and to, then array[from] += trips[i][0], array[to] -= trips[i][0]
 2. Define variable passenger number to 0. Looping through array, add current index number, ie how many passengers should in/out. Once passenger number greater than capacity, return false
+
+## 1871. Jump Game VII
+1. Use queue to store jumped positions. Initiate queue as 0
+2. Each time poll a position i from queue, and search in range [max(i + minJump, max distance(initialize as 0) + 1), min(i + maxJump + 1, s.length())], once meet '0', offer to queue and if '0' position is length - 1, return true
