@@ -40,5 +40,8 @@ Convert int to string
 1. Integer.toString(int)
 2. String.valueOf(int)
 
-## 1221. Split a String in Balanced Strings
+## 1221. Split a String in Balanced Strings && 1963. Minimum Number of Swaps to Make the String Balanced
+### 1221
 We only need to count L and R and update plus 1 to result when they are equal. If previous results are equal, even if upcoming combination equal, it would also work
+### 1963. Minimum Number of Swaps to Make the String Balanced
+If we meet ], we add 1 to close variable, else -1. Then we update max of close and return (max close + 1) / 2
