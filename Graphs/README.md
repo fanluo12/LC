@@ -47,3 +47,6 @@ Loop through matrix, if matrix[r][c] == 1, result +4. If previous row or columns
 
 ## 1905. Count Sub Islands
 We want to know grid2 islands are sub islands of grid1, first we traverse two grids, once grid1[r][c] is water and grid2[r][c] is land, we use dfs function to convert grid2[r][c] and neighbor islands as water, ie 0. After this we can simply traverse two grids and find union of them
+
+## 1958. Check if Move is Legal
+We want to change (r, c) to one color such that this color be a end point of ONE good line(at least 3 cell and two end points colors are same). So take (rMove, cMove) stable, and search 8 directionally with dfs search. In dfs search, we need to calculate line length. While new row and col in boundaries, we grid[new row][new col] is same color with stable point, we check if length greater than 3
