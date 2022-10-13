@@ -38,7 +38,7 @@ Use left = 0 and right = 0 as poiner. While loop through right pointer. If left 
 ## 28. Find the Index of the First Occurrence in a String
 For loop through string, for each index initiate main string pointer and substring pointer. While main string[pointer1] == substring[pointer2] we update two pointers and check if substring pointer reaches end
 
-## 151. Reverse Words in a String
+## **151. Reverse Words in a String
 3 helper function
 1. Reverse string function(simply use left and right pointer to swap string) to reverse whole string
 2. For reversed string, reverse words inside with pointers. Use left and right pointer to jump spaces and update right to left place and iterate stirng, then swap with function 1
