@@ -54,5 +54,5 @@ Use isPalindrome helper function to judge string and substring. Use two pointers
 Update left and right pointer respectively if left is ascending order and right is ascending also. Judge if left and right are equal
 
 ## **1498. Number of Subsequences That Satisfy the Given Sum Condition
-1. Sort array first. Note this is subsequences not subsets. For example, [3,3,6,8] and target is 10, since [3,3,6] satisfy and result is 2^0 + 2^1 + 2^2 = 6, we first need to create a power array representing each index potential result, ie power array = [1,2,4,8,16...]
-2. Now with the result index array, we only need to update our result on it with indices. We use left and right pointer, if they greater than target, right --. Else we update left pointer and add power array[left] to result
+1. Sort array first. Note this is subsequences not subsets. For example, [3,3,6,8] and target is 10, since [3,3,6] satisfy and result would be 2^0(since 3 only counts itself), 2^1([3, 3] includes second 3 and [3, 3]), 2^2([3,3,6] includes 6, 3, 3 and [3,3,6]), we first need to create a power array representing each index potential result, ie power array = [1,2,4,8,16...]
+2. Now with the result index array, we only need to update our result on it with indices. We use left and right pointer, if they greater than target, right --. Else we update left pointer and add power array[right - left] to result
