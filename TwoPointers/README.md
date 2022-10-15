@@ -56,3 +56,6 @@ Update left and right pointer respectively if left is ascending order and right 
 ## **1498. Number of Subsequences That Satisfy the Given Sum Condition
 1. Sort array first. Note this is subsequences not subsets. For example, [3,3,6,8] and target is 10, since [3,3,6] satisfy and result would be 2^0(since 3 only counts itself), 2^1([3, 3] includes second 3 and [3, 3]), 2^2([3,3,6] includes 6, 3, 3 and [3,3,6]), we first need to create a power array representing each index potential result, ie power array = [1,2,4,8,16...]
 2. Now with the result index array, we only need to update our result on it with indices. We use left and right pointer, if they greater than target, right --. Else we update left pointer and add power array[right - left] to result
+
+## 877. Stone Game
+Use boolean flag represent alice turn, initiate as true. Use left and right pointer to update. If it is alice turn, judge whether left or right greater and add its number to alice and update left or right pointer, also set boolean flag to false. If it is not alice turn, do same thing to bob
