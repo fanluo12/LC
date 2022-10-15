@@ -5,3 +5,5 @@
 ## 2017. Grid Game
 ![image](https://user-images.githubusercontent.com/43394670/196003417-a5c43d63-fa8e-4253-a64d-43c1099d3d6a.png)
 
+## 560. Subarray Sum Equals K
+Idea is cumulately adding elements of array to prefixSum and put prefixSum to hashmap, once prefixSum - k appears in hashmap(hashmap must initiate as 0->1) means k have already showed, then add its value to result
