@@ -73,3 +73,6 @@ Take [2,2,3,5] as example, it cannot been paritioned. The target we looking for 
 ## **1043. Partition Array for Maximum Sum
 1. Create dp array representing each index current max partition sum. We first find for first k element, each step max sum. For example, arr = [1,15,7,9,2,5,10], k = 3, so dp = [1, 30, 45,...]
 2. After we find first k max sum, we loop from k to the end. Each time looping, we define a variable called partitionMax. This would find max value of k window of [current - k, current] which means we need to look back to see the max of previous(including current). So we nest loop k times from 0, and partitionMax would update by max arr[i - j] in nested loop ]. For each time searching partitionMax, we also see if we need to change previous sum. We find previous sum by dp[i - j - 1](kind of like prefix sum), we update current index with max of itself and previous sum + (j + 1) * partitionMax
+
+## 118. Pascal's Triangle && 119. Pascal's Triangle II
+Loop through from 0 to numRows - 1, initiate an empty list for each level. Then nested loop through index j from 0 to i, if j is 0 or j == i, level arraylist add 1, else add previous level (j - 1) + (j)
