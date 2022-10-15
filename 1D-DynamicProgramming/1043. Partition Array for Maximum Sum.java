@@ -1,7 +1,6 @@
 class Solution {
     public int maxSumAfterPartitioning(int[] arr, int k) {
         int[] dp = new int[arr.length];
-        Arrays.fill(dp, 0);
         int maxFirstK = arr[0];
         
         for (int i = 1; i < k; i ++) {
