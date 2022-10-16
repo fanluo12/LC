@@ -1,4 +1,4 @@
-# 16 Total - 09/18/2022
+# 27 Total -10/16/2022
 
 ## 70. Climbing Stairs
 Create dp array which length = n + 1 and initialize 0 and 1 index as 1.
