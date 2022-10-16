@@ -76,3 +76,8 @@ Take [2,2,3,5] as example, it cannot been paritioned. The target we looking for 
 
 ## 118. Pascal's Triangle && 119. Pascal's Triangle II
 Loop through from 0 to numRows - 1, initiate an empty list for each level. Then nested loop through index j from 0 to i, if j is 0 or j == i, level arraylist add 1, else add previous level (j - 1) + (j)
+
+## **132. Palindrome Partitioning II
+1. Use 2D boolean array to represent i == j or not to judge palindrome
+2. Use 1D dp array to update curs
+3. For loop right window through each position, and each time minimum cut should be the number of index. Then for each index, nested for loop left window from 0, once left and right are equal, mark 2D array[left][right] = true and update minimum cuts to minimum of iteself and dp[left - 1] + 1 if left is not 0 else 0, and update this cuts to dp[right]
