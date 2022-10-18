@@ -19,6 +19,14 @@ Same as house robbers, we need to compare rob current index or rob previous and 
 ## 5. Longest Palindromic Substring
 For loop through string and at each index, we start to search palindrome of left and right direction. Since palindrome has odd and even length, so we set left pointer as i and right pointer as i for odd length palindrome and left as i, right as i + 1 for even length palindrome. 
 For each odd or even length palindrome search, we use while loop to prevent left and right in boundaries and left position character equals right character. Once we are in looping, update longest substring length and substring
+1. For odd length palindrome
+....(L & R)....
+...L.R...
+..L...R..
+2. For even length palindrome
+...LR...
+..l..R..
+.l....R..
 
 ## 647. Palindromic Substrings
 Same as question 5 above to find palindrome substrings. For loop string and start searching for each index and regarding it as center. Consider odd and even length when searching and update to result
