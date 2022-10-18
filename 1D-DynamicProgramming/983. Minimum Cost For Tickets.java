@@ -12,6 +12,7 @@ class Solution {
             if (!travelDay[i]) {
                 dp[i] = dp[i - 1];
                 continue;
+                // if we want to remove this continue, we need to add else since if travel day we need to execute statements down
             }
             dp[i] = Math.min(Math.min(dp[Math.max(0, i - 1)] + costs[0], dp[Math.max(0, i - 7)] + costs[1]), dp[Math.max(0, i - 30)] + costs[2]);
         }
