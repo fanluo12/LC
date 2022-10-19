@@ -35,4 +35,4 @@ Create 2D dp array with extra row and column. Looping row and column, if i - 1 =
 
 ## 1277. Count Square Submatrices with All Ones
 1. Count first row and column of single square
-2. DP way. Start looping from (1, 1) until end, dp[i][j] = min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1])
+2. DP way. Start looping from (1, 1) until end, add each index value to result. Note that once we meet 1 at (i, j), we check (i - 1, j), (i, j - 1) and (i - 1, j -1) whether all greater than 0, if so, we add minimum of them to (i, j) and add this updated index value to result
