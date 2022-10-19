@@ -35,10 +35,4 @@ Both question have follow idea
 2. DP way. Start looping from (1, 1) until end, add each index value to result. Note that once we meet 1 at (i, j), we check (i - 1, j), (i, j - 1) and (i - 1, j -1) whether all greater than 0, if so, we add minimum of them to (i, j) and add this updated index value to result
 
 ## 72. Edit Distance
-/*
-  0 h o r s e
-0 0 1 2 3 4 5
-r 1 1 2 2 3 4
-o 2 2 1 2 3 4
-s 3 3 2 2 2 3
-*/
+
