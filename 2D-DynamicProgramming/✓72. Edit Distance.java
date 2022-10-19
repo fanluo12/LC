@@ -28,3 +28,23 @@ class Solution {
         return dp[word2.length()][word1.length()];
     }
 }
+
+class Solution2 {
+    public int minDistance(String word1, String word2) {
+        int[][] dp = new int[word2.length() + 1][word1.length() + 1];
+        
+        for (int c = 0; c < word1.length() + 1; c ++) {
+            dp[0][c] = c;
+        }
+        for (int r = 0; r < word2.length() + 1; r ++) {
+            dp[r][0] = r;
+        }
+        
+        for (int i = 1; i <= word2.length(); i ++) {
+            for (int j = 1; j <= word1.length(); j ++) {
+                dp[i][j] = Math.min(Math.min(dp[i - 1][j] + 1, dp[i][j - 1] + 1), dp[i - 1][j - 1] + (word2.charAt(i - 1) == word1.charAt(j - 1) ? 0 : 1));
+            }
+        }
+        return dp[word2.length()][word1.length()];
+    }
+}
