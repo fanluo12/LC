@@ -1,11 +1,14 @@
 # 13 total-10/19/2022
 
-## 62. Unique Paths && 63. Unique Paths II
+## 62. Unique Paths && 63. Unique Paths II && 64. Minimum Path Sum
+These 3 questions are similar which find path in a graph and directions are right and down only
 ### 62
 Create same size 2D dp array and populate with 1. From 1 to row size - 1 and 1 to col size -1, dp[r][c] = dp[r - 1][c] + dp[r][c - 1]
 ### 63
 Create same size 2D dp array. Loop through first row and col and populate with 1. If there is obstacle in first row and col, break.
 For loop through, once meet obstacle, continue to jump, then dp[r][c] = dp[r - 1][c] + dp[r][c - 1]
+### 64 
+Use prevSum variable to record previous sum. For loop through array, if row and col are both 0, initialize prevSum as 0. If row == 0, prevSum equals to last column, which is array[r][c - 1]. Same for col. If not (0, 0) or first row or first col, prevSum = min((r-1, c), (r, c-1)). Update array[r][c] = prevSum + grid[r][c]
 
 ## 1143. Longest Common Subsequence
 Create dp array where rows = long string.length() + 1 and cols = short string.length() + 1.
@@ -18,9 +21,6 @@ For loop row and column, mark (0, 0) as true. Then once row(col) greater than 0 
 ## 44. Wildcard Matching
 Create boolean array of extra 1 length and initiate (0, 0) as true. For string p, since it contains '*', we loop column to update next column as last column if it is '*'.
 For loop through row and column from (1, 1) place. Once s[i - 1] == p[j - 1] or p[j - 1] == '?', means this position can be represented as last position, which is (i - 1, j - 1). If p[j - 1] is '*', meaning things after it would match, but we still need to check previous match or not, we use || operator to track (i - 1, j) or (i, j - 1). Else fill with false
-
-## 64. Minimum Path Sum
-Use prevSum variable to record previous sum. For loop through array, if row and col are both 0, initialize prevSum as 0. If row == 0, prevSum equals to last column, which is array[r][c - 1]. Same for col. If not (0, 0) or first row or first col, prevSum = min((r-1, c), (r, c-1)). Update array[r][c] = prevSum + grid[r][c]
 
 ## 403. Frog Jump
 Use 2D boolean array which row is n and col is n + 1. Column represent for each unit, how far it can goes, so for the last index the farthest would be n + 1. We initialize dp[0][1] = true representing 0 index can reach 1 index.
