@@ -30,7 +30,8 @@ b 0 0 0 0 1 2 3 3
 i 0 0 0 0 0 0 3 3 
 t 0 0 0 0 0 0 0 3
 
-loop through each row and column, once we find characters are equal for (i, j) index, we need to add (i - 1, j - 1)(which is previous max result) to (i - 1, j)(which is current updated result for each row)
+loop through each row and column, once we find characters are equal for (i, j) index, 
+we need to add (i - 1, j - 1)(which is previous max result) to (i - 1, j)(which is current updated result for each row)
 */
 
 class Solution2 {
