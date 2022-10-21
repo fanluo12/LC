@@ -5,6 +5,7 @@ class Solution {
     public int shortestPath(int[][] grid, int k) {
         int ROWS = grid.length, COLS = grid[0].length;
         Deque<int[]> queue = new LinkedList<>();
+        // queue will add [row, col, path]
         queue.offer(new int[]{0, 0, 0});
         
         int[][] visited = new int[ROWS][COLS];
@@ -25,14 +26,16 @@ class Solution {
                 for (int[] dir: directions) {
                     int newR = tmp[0] + dir[0];
                     int newC = tmp[1] + dir[1];
-                    
+                    // check boundaries first
                     if (newR < 0 || newC < 0 || newR >= ROWS || newC >= COLS) {
                         continue;
                     }
                     int newK = tmp[2] + grid[newR][newC];
+                    // check if exceed k or not
                     if (newK > k) {
                         continue;
                     }
+                    // if newK is large, break single loop
                     if (visited[newR][newC] <= newK) {
                         continue;
                     }
