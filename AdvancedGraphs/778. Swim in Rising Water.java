@@ -14,7 +14,7 @@ class Solution {
             }
             for (int[] dir: directions) {
                 int newRow = r + dir[0], newCol = c + dir[1];
-                if (newRow < 0 || newCol < 0 || newRow == n || newCol == n || visited[newRow][newCol] == true) {
+                if (newRow < 0 || newCol < 0 || newRow == n || newCol == n || visited[newRow][newCol]) {
                     continue;
                 }
                 visited[newRow][newCol] = true;
