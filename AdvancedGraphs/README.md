@@ -49,3 +49,7 @@ We can either BFS or DFS
 
 ## 1466. Reorder Routes to Make All Paths Lead to the City Zero
 We store all the (from, to) to hashmap. If direction is right, we store [to, 1] as value of from since if we changes back this route it will update 1 to result. So for the reverse direction we will sotre [from, 0] since we don't need to reverse. We use hashset to start dfs searching from begin city. At dfs function, we first add city to hashset, and for loop through all the connected city pairs in hashmap, add its route value to result
+
+## 802. Find Eventual Safe States
+1. We create integer array safe where safe[i] = 2 representing finally safe, and safe[i] = 1 representing not safe. Loop through graph, use dfs helper function, if ith node is safe, add it to result list
+2. In dfs function, we first judge if safe[i] == 2 => return true and safe[i] == 1 => return false. We mark safe[i] as 1 which means visiting and get its sub-routes array. We loop through sub-routes array and use dfs function to judge. Finally we mark safe[i] as 2 and return true
