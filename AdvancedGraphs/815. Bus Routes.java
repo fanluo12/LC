@@ -1,6 +1,6 @@
 class Solution {
     public int numBusesToDestination(int[][] routes, int source, int target) {
-        HashMap<Integer, HashSet<Integer>> map = new HashMap<>();
+        Map<Integer, Set<Integer>> map = new HashMap<>();
         for (int busStop = 0; busStop < routes.length; busStop ++) {
             for (int stop : routes[busStop]) {
                 if (!map.containsKey(stop)) {
@@ -10,27 +10,27 @@ class Solution {
             }
         }
         
-        Deque<int[]> queue = new ArrayDeque<>();
+        Deque<int[]> queue = new LinkedList<>();
         queue.offer(new int[]{source, 0});
-        HashSet<Integer> visited = new HashSet<>();
+        // use boolean array to mark visited bus stops
         boolean[] seen = new boolean[routes.length];
+        // hashset visited to add buses
+        Set<Integer> visited = new HashSet<>();
         
         while (!queue.isEmpty()) {
             int[] tmp = queue.poll();
             int stop = tmp[0], busNumber = tmp[1];
-            
             if (stop == target) {
                 return busNumber;
             }
-            
-            for (int busStop : map.get(stop)) {
+            for (int busStop: map.get(stop)) {
                 if (seen[busStop]) {
                     continue;
                 }
-                for (int nextStop : routes[busStop]) {
-                    if (!visited.contains(nextStop)) {
-                        queue.offer(new int[]{nextStop, busNumber + 1});
-                        visited.add(nextStop);
+                for (int bus: routes[busStop]) {
+                    if (!visited.contains(bus)) {
+                        visited.add(bus);
+                        queue.offer(new int[]{bus, busNumber + 1});
                     }
                 }
                 seen[busStop] = true;
