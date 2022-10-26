@@ -30,3 +30,6 @@ We want [1,5,9,10,11,12,13] from [1,5,9,10,11,12,13,13,15] and pop 13. However i
 1. Use hashmap to store frequency of characters
 2. Use stringbuilder to track current string
 3. Polling entry map from pq, judge the length of stringbuilder, if near the boundary criteria, check if pq is empty, break if it is. Then poll another entry, offer back if second count-- still not 0. If not near boundary criteria, count--, then check count is 0 or not to decide offer back
+
+## 1985. Find the Kth Largest Integer in the Array
+We put string-number to priority queue with ascending order. Once pq.szie() > k, we poll out small element. Finally we poll first element in pq. Note that we cannot poll number to pq since string length would greater than 100 which much longer than Long type. So we compare string length, if equal, we use a.compareTo(b) to compare value, else we put shorter length string to pq
