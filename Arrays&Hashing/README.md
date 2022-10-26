@@ -87,7 +87,7 @@ For the helper function, we first get length of each two word, and looping them 
 
 ## 1048. Longest String Chain
 1. Sort array with string length ascending order
-2. Use hashmap to store longest chain. For loop through each word, for each word, delete one letter for each index every time and make a new string. If map contains this new string key, then add 1 to temporary result and put to map
+2. Use hashmap to store longest chain. For loop through each word, for each word, delete one letter for each index every time and make a new combination. If map contains this new string key, then add 1 to temporary result and put to map
 
 ## 1299. Replace Elements with Greatest Element on Right Side
 No need stack or some special data structures. We define a right max variable as -1, and loop through array from back. When traversing, we define new max value which is the max of right max and arr[i], and set arr[i] = right max, right max = new max
