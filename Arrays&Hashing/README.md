@@ -41,7 +41,6 @@ Use letter array to ++ for s and -- for t. Loop again and once meet non-zero ret
 ### 1189. Maximum Number of Balloons
 Remember we cannot use one letter array to represent balloon and update min by traversing "balloon" since balon case. We need to use two array, and dived single l count array to right answer l
 
-# NOT FROM NEETCODE
 ## 283. Move Zeroes
 Define a variable-cur to represent 0. For loop through array, once meet nums[i] != 0, if i is not same as cur, which means before i(identified not 0) there has 0 so switch them. Outside loop update cur.
 
