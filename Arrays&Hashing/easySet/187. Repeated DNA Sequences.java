@@ -1,7 +1,7 @@
 class Solution {
     public List<String> findRepeatedDnaSequences(String s) {
-        HashSet<String> seen = new HashSet<>();
-        HashSet<String> res = new HashSet<>();
+        Set<String> seen = new HashSet<>();
+        Set<String> res = new HashSet<>();
         
         for (int i = 0; i < s.length() - 9; i ++) {
             String cur = s.substring(i, i + 10);
