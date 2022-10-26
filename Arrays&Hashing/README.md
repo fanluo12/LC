@@ -60,7 +60,8 @@ For loop through set. If current element's previous not in set, we take this one
 For loop through array, trying to put nums[i] == i + 1
 
 ## 149. Max Points on a Line
-Use atan2() is an inbuilt method in Java that is used to return the theta component from the polar coordinate
+1. For each point, we need to go through all other points except itself and put k frequency to hashmap. Note when we put k to hashmap, we need to update result by map.get(k) + 1 since we need to count point itself
+2. We Use atan2() which is an inbuilt method in Java that is used to return the theta component from the polar coordinate, in other words, give us k we want. The way to use is call Math.atan2(x2 - x1, y2 - y1)
 
 ## 287. Find the Duplicate Number && 448. Find All Numbers Disappeared in an Array
 ### 287
