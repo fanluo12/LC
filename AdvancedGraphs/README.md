@@ -35,7 +35,8 @@ Use DFS function to find each queries results. For DFS function, we need to judg
 2. Use BFS to search. First use queue to store target, and minus k each time when polling. While polling, find values from map and add to queue
 
 ## 934. Shortest Bridge
-We first loop through matrix, once we find a island, we use dfs function to mark neighbor as true(dfs helper function will mark island 4 directions of boolean array as true), then we judge and return by bfs function(bfs function will add true row and column of boolean array to queue, and use queue to find each true neightbor's 4 directions and each time searching add 1 to result. Once searched that new island is 1 simply return result)
+1. We loop through each unit of grid, ONCE we find a island, we use dfs search to expand its connected island and marked visited unit as true. This idea is not same with fill boolean array with ture if island is 1, we need to search from one island, expand to its largest island, and use bfs to search another island
+2. Once we find unit island and dfs method to fill boolean array, we use bfs method. First we put all true unit in boolean array to queue, and use bfs search 4 directionally if in boundary or not visited. Once new unit is 1, we return result, else after each 4 directionally search we update 1 to result
 
 ## 1293. Shortest Path in a Grid with Obstacles Elimination
 1. Use queue to store (row, col, steps) and initialze queue with [0, 0, 0]
