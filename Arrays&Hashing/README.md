@@ -1,7 +1,8 @@
 # 52 total - 10/26/2022
 
 ## 219. Contains Duplicate II
-Take. k as a sliding window. For loop through array and put elements to hashset. If window size greater than k, remove i - k - 1 element from set. If cannot add(means duplicate in k window) then return
+1. Method1(hashset)Take k as a sliding window. For loop through array and put elements to hashset. If window size greater than k, remove i - k - 1 element from set. If cannot add(means duplicate in k window) then return
+2. Method2(hashmap)Loop through array andp put index of element to hashmap. Once map containskey and the difference is less than k, return true
 
 ## 242. Valid Anagram
 Use hash map to store character occurance time. 
