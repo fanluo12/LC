@@ -1,6 +1,6 @@
 class Solution {
     public boolean isAlienSorted(String[] words, String order) {
-        HashMap<Character, Integer> map = new HashMap<>();
+        Map<Character, Integer> map = new HashMap<>();
         for (int i = 0; i < order.length(); i ++) {
             map.put(order.charAt(i), i);
         }
@@ -13,7 +13,7 @@ class Solution {
         return true;
     }
     
-    private boolean compare(String s1, String s2, HashMap<Character, Integer> map) {
+    public boolean compare(String s1, String s2, Map<Character, Integer> map) {
         int l1 = s1.length(), l2 = s2.length();
         for (int i = 0, j = 0; i < l1 && j < l2; i ++, j ++) {
             if (s1.charAt(i) != s2.charAt(j)) {
@@ -25,7 +25,7 @@ class Solution {
                 }
             }
         }
-        // words = ["apple","app"] => false case
+        // NOTE case ["apple", "app"] => return false
         if (l1 > l2) {
             return false;
         }
