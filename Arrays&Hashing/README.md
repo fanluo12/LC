@@ -17,7 +17,7 @@ In outer for loop, when looping each row, initialize 3 sets- row set, columns se
 In inner for loop, check if non-null element can be add to row set(!rowSet.add(board[r][c]) -> return false), check if non-null element can be add to column set(!rowSet.add(board[c][r]) -> return false) and check if non-null element can be add to sub-box set(!sub-box-set.add(board[R][C]))
 How to get R, C for sub-box? Under r and c loop, initialize row = (r/3)*3, col = (r % 3) * 3, then R = row + c / 3, C = col + c % 3
 
-## 49. Group Anagrams && 387. First Unique Character in a String && 389. Find the Difference && ** 395. Longest Substring with At Least K Repeating Characters ## 242. Valid Anagram ## 1189. Maximum Number of Balloons && 438. Find All Anagrams in a String
+## 49. Group Anagrams && 387. First Unique Character in a String && 389. Find the Difference && ** 395. Longest Substring with At Least K Repeating Characters ## 242. Valid Anagram ## 1189. Maximum Number of Balloons
 ### 49
 #### Input: strs = ["eat","tea","tan","ate","nat","bat"]
 #### Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
@@ -35,9 +35,6 @@ The idea is split array with less than k character, for example, string is aaabc
 Use letter array to ++ for s and -- for t. Loop again and once meet non-zero return false
 ### 1189. Maximum Number of Balloons
 Remember we cannot use one letter array to represent balloon and update min by traversing "balloon" since balon case. We need to use two array, and dived single l count array to right answer l
-### 438
-1. First fill char array of p and create a new char array of s
-2. Use slide window method to loop through s. Fix start at index 0 and loop end to fill char array. Once length of window is p.length, use Arrays.equals(arr1, arr2) to judge whether add to final list or not. Then update window
 
 ## 283. Move Zeroes
 Define a variable-cur to represent 0. For loop through array, once meet nums[i] != 0, if i is not same as cur, which means before i(identified not 0) there has 0 so switch them. Outside loop update cur.
