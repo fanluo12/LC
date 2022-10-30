@@ -28,7 +28,9 @@ Fill integer array with character of string - 'a' and find first 1 in this array
 Fill integer array with t[char - 'a'] ++, and s[char - 'a'] --. Then the index with 1 is the one we looking for
 ### **395. Longest Substring with At Least K Repeating Characters
 The idea is split array with less than k character, for example, string is aaabccc and k is 3, we split to string arrays [aaa, ccc] to find recursively.
-We first use char array to find frequency of string and initialize a char splitChar as 0. Looping through frequency array and break as soon as we find first character to split. We split string to string array by split() method, and recursively update result max. The result part can be confusing since we compare res(initialize as 0) to function(substring, k). The idea is if we cannot find break split character we simply return to current string length, so this is the end of recursion
+1. We use char array to find frequency of string and initialize a char splitChar as 0
+2. Looping through frequency array and break as soon as we find first character to split
+3. We split string to string array by split() method, and recursively update result max. The result part can be confusing since we compare res(initialize as 0) to function(substring, k). The idea is if we cannot find break split character we simply return to current string length, so this is the end of recursion
 ### 242. Valid Anagram
 Use letter array to ++ for s and -- for t. Loop again and once meet non-zero return false
 ### 1189. Maximum Number of Balloons
