@@ -1,6 +1,6 @@
 class Solution {
     public int leastBricks(List<List<Integer>> wall) {
-        HashMap<Integer, Integer> map = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
         map.put(0, 0); // prevent case [[1],[1],[1]]
         for (int i = 0; i < wall.size(); i ++) {
             int total = 0;
