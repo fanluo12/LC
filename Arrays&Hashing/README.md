@@ -89,3 +89,7 @@ No need stack or some special data structures. We define a right max variable as
 ## 1365. How Many Numbers Are Smaller Than the Current Number
 Make frequency array of all elements in nums. Then update each index of adding previous value. Create a new result array, for each element in nums, take it as index in frequency array, and find previous position. Note when nums[i] = 0 we cannot create -1, simpy add 0 to result
 
+## 290. Word Pattern
+1. Conert longer string to string array and judge length of array and pattern first
+2. Use hashmap to store (pattern[i], array[i])
+3. Loop through characaters in pattern. If map not contains key, we need to judge whether if map contains values or not before we put key to map. Else we need to check map.get(char) == array[i] or not
