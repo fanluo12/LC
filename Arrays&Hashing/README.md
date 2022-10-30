@@ -93,3 +93,10 @@ Make frequency array of all elements in nums. Then update each index of adding p
 1. Conert longer string to string array and judge length of array and pattern first
 2. Use hashmap to store (pattern[i], array[i])
 3. Loop through characaters in pattern. If map not contains key, we need to judge whether if map contains values or not before we put key to map. Else we need to check map.get(char) == array[i] or not
+
+## 349. Intersection of Two Arrays && 350. Intersection of Two Arrays II
+Find intercsection of two arrays. The different is 349 asks to find unique duplicate and 350 asks to find all intersections.
+### 349
+We use hashset to store unique of an array and another set to store intersections when looping the other array
+### 350
+We use hashmap to store number and frequency of an array, and when looping another array, once map contains key and value greater than 1, add to arraylist and convert arraylist to array
