@@ -5,7 +5,7 @@ class Solution {
             return false;
         }
         
-        HashMap<Character, String> map = new HashMap<>();
+        Map<Character, String> map = new HashMap<>();
         
         for (int i = 0; i < words.length; i ++) {
             if (!map.containsKey(pattern.charAt(i))) {
