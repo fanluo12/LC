@@ -51,8 +51,11 @@ reverse "<-----" we can get "-->----->"
 Use set to store all elements.
 For loop through set. If current element's previous not in set, we take this one as start and use a pointer to represent it. While set contains this pointer + 1, pointer ++ and calculate max of pointer - current element
 
-# HARD 41. First Missing Positive
-For loop through array, trying to put nums[i] == i + 1
+## 41. First Missing Positive
+### example1: [-1,4,2,1,9,10] -> [1,2,-1,4,9,10], return 3
+### example2: [7,8,9,10,11] -> return 1
+The idea is loop through array, trying to put nums[i] == i + 1, ie [1,2,3,4,...] and loop again, once meet i + 1 != nums[i] return
+1. Take [-1,4,2,1,9,10] as example, finally we need to get [1,2,-1,4,9,10] and return 3. We loop through each index first, and take nums[i] as INDEX. While INDEX between [0, length] and num[INDEX - 1] != nums[i], we swap, so when looping to 1, we get [-1,1,2,4,9,10] at first, then [1, -1,2,4,9,10]
 
 ## 149. Max Points on a Line
 1. For each point, we need to go through all other points except itself and put k frequency to hashmap. Note when we put k to hashmap, we need to update result by map.get(k) + 1 since we need to count point itself
