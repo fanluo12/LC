@@ -7,11 +7,11 @@ class Solution {
         for (int i = n - 1; i >= 0; i --) {
             if (Math.abs(nums[left]) > Math.abs(nums[right])) {
                 res[i] = nums[left] * nums[left];
-                left += 1;
+                left ++;
             }
             else {
                 res[i] = nums[right] * nums[right];
-                right -= 1;
+                right --;
             }
         }
         return res;
