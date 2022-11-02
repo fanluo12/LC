@@ -1,3 +1,4 @@
+```
 class Solution {
     public List<List<Integer>> combinationSum2(int[] A, int target) {
         Arrays.sort(A);
@@ -25,3 +26,4 @@ class Solution {
         }
     }
 }
+```
