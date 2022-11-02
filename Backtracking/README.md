@@ -1,4 +1,4 @@
-# 14 total - 09/18/2022
+# 21 total - 11/02/2022
 
 ## 113. Path Sum II
 Note we want root-left path which means left should have no children. So when backtracking, we first judge root is null or not, next we check if no left and right children and also targetSum is 0. If so, add path to result, else we search left and right recursively
