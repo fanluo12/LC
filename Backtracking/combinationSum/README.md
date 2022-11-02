@@ -36,3 +36,4 @@ class Solution {
     }
 }
 ```
+For combination III, we need to use two vairable, k and n to check if n == 0 and k == 0 then add path. If any of them less than 0 simply return. Next for loop from 1 to 9 and do backtracking
