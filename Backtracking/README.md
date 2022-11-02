@@ -14,6 +14,6 @@ Take current index and left window of substring, for loop from current index unt
 ### 698. Partition to K Equal Sum Subsets
 
 ## 1239. Maximum Length of a Concatenated String with Unique Characters
-1. Define global variable result
-2. Backtrack helper function, first judge if there is no duplicate for current concatenation string with helper function and update max length. Next if index reaches end or contains duplicate, return. Then for loop through array list, concat strings to backtrack
-3. Define duplicate judgement function, input current concat string and use letter array to represent. If letter array digit more than 1 then return false
+1. Define global variable result to update max
+2. In dfs method, We use noDuplicate helper method to check current string has duplicate or not. If no, update max result. Then we check once reaches the end of list, if there is still duplicate, if so return. Next looping from start to end, each time concat current string
+3. For noDuplicate method, we fill char array to check if there is duplicate in string or not
