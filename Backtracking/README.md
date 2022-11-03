@@ -8,6 +8,11 @@ Note we want root-left path which means left should have no children. So when ba
 2. Backtracking. Once index reaches end of string, String.join(" ", path) then add to final arraylist
 3. Loop through and make substring of string. Once set contains string, add to path and backtracking from next position
 
+## 17. Letter Combinations of a Phone Number
+Unlike 140, we don't need to use List<String> path to store tmp string, we only need permutations of keys. So we use a string to update result and do a kind-of nested loop to concat values of keys.
+1. In backtrack method, once temporary string length equals to digits length, we add to result and return
+2. Loop through digits, for loop through each values set of map.get(digits.charAt(i)) and do backtracking, no need to REMOVE LAST POSITION!!!
+
 ## 22. Generate Parentheses
 Backtrack to generate parentheses. In backtrack function, use two parameters left and right to generate left and right parenthese. Initialize left and right as n and set end criteria is that left and right are both 0. In each backtrack process, left - 1 if generate "(" and right - 1 if generate ")"
 
