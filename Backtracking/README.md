@@ -14,7 +14,10 @@ Unlike 140, we don't need to use List<String> path to store tmp string, we only 
 2. Loop through digits, for loop through each values set of map.get(digits.charAt(i)) and do backtracking, no need to REMOVE LAST POSITION!!!
 
 ## 22. Generate Parentheses
+### backtrack method
 Backtrack to generate parentheses. In backtrack function, use two parameters left and right to generate left and right parenthese. Initialize left and right as n and set end criteria is that left and right are both 0. In each backtrack process, left - 1 if generate "(" and right - 1 if generate ")"
+### A Smart method
+We take opposite characters of nums[0][0], nums[1][1], nums[2][2]...i.e. if char is 1 we go 0
 
 ## 93. Restore IP Addresses
 Backtracking with current index, dots and current string. While current index reaches end and dots reaches 4, final list add result and return.
