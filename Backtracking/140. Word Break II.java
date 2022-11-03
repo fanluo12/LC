@@ -1,24 +1,24 @@
 class Solution {
     public List<String> wordBreak(String s, List<String> wordDict) {
-        HashSet<String> set = new HashSet<>();
+        Set<String> set = new HashSet<>();
         set.addAll(wordDict);
         
-        List<String> res = new ArrayList<>();
-        backtrack(s, 0, res, set, new ArrayList<>());
+        List<String> res = new ArrayList<>(); 
+        backtrack(s, set, res, new ArrayList<>(), 0);
         return res;
     }
     
-    public void backtrack(String s, int start, List<String> res, HashSet<String> set, List<String> path) {
+    public void backtrack(String s, Set<String> set, List<String> res, List<String> path, int start) {
         if (start == s.length()) {
             res.add(String.join(" ", path));
             return;
         }
         
-        for (int i = start + 1; i < s.length() + 1; i ++) {
-            String curStr = s.substring(start, i) ;
-            if (set.contains(curStr)) {
-                path.add(curStr);
-                backtrack(s, i, res, set, path);
+        for (int i = start; i < s.length(); i ++) {
+            String tmpStr = s.substring(start, i + 1);
+            if (set.contains(tmpStr)) {
+                path.add(tmpStr);
+                backtrack(s, set, res, path, i + 1);
                 path.remove(path.size() - 1);
             }
         }
