@@ -27,3 +27,9 @@ Take current index and left window of substring, for loop from current index unt
 1. Define global variable result to update max
 2. In dfs method, We use noDuplicate helper method to check current string has duplicate or not. If no, update max result. Then we check once reaches the end of list, if there is still duplicate, if so return. Next looping from start to end, each time concat current string
 3. For noDuplicate method, we fill char array to check if there is duplicate in string or not
+
+## 1849. Splitting a String Into Descending Consecutive Values
+We need to create a backtrack method, to get accumulated number as cur, and previous and check recursively
+1. For backtrack() method, we need to put 3 parameters, original string s, previous number, we use WRAPPER CLASS DOUBLE since we can initiate as null, and start index initialized as 0
+2. In backtrack, we need to construct each recursion's number, i.e. double cur = 0. Then loop from start index, construct cur with cur = cur * 10 + (s.charAt(i) - '0'). NOTE cur should less than 10000000000L
+3. Then after constructed cur, we check if prev is null or not. If so, simply backtrack, else since prev is not null, we check cur == prev - 1 and i reaches end and backtrack() from next position
