@@ -3,6 +3,11 @@
 ## 113. Path Sum II
 Note we want root-left path which means left should have no children. So when backtracking, we first judge root is null or not, next we check if no left and right children and also targetSum is 0. If so, add path to result, else we search left and right recursively
 
+## 140. Word Break II
+1. Use hashset to store all words in wordDict
+2. Backtracking. Once index reaches end of string, String.join(" ", path) then add to final arraylist
+3. Loop through and make substring of string. Once set contains string, add to path and backtracking from next position
+
 ## 22. Generate Parentheses
 Backtrack to generate parentheses. In backtrack function, use two parameters left and right to generate left and right parenthese. Initialize left and right as n and set end criteria is that left and right are both 0. In each backtrack process, left - 1 if generate "(" and right - 1 if generate ")"
 
