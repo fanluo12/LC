@@ -4,7 +4,7 @@ class Solution {
             return new ArrayList<>();
         }
         
-        HashMap<Character, String> map = new HashMap<>();
+        Map<Character, String> map = new HashMap<>();
         map.put('2', "abc");
         map.put('3', "def");
         map.put('4', "ghi");
@@ -15,19 +15,19 @@ class Solution {
         map.put('9', "wxyz");
         
         List<String> res = new ArrayList<>();
-        backtrack(res, digits, 0, "", map);
+        backtrack(digits, res, "", 0, map);
         return res;
     }
     
-    public void backtrack(List<String> res, String digits, int index, String subString, HashMap<Character, String> map) {
-        if (subString.length() == digits.length()) {
-            res.add(subString);
+    public void backtrack(String digits, List<String> res, String tmpStr, int start, Map<Character, String> map) {
+        if (tmpStr.length() == digits.length()) {
+            res.add(new String(tmpStr));
             return;
         }
-        
-        for (char c: map.get(digits.charAt(index)).toCharArray()) {
-            backtrack(res, digits, index + 1, subString + c, map);
+        for (int i = start; i < digits.length(); i ++) {
+            for (char c: map.get(digits.charAt(start)).toCharArray()) {
+                backtrack(digits, res, tmpStr + c, i + 1, map);
+            }
         }
     }
-    
 }
