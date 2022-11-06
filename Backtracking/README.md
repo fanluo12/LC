@@ -31,6 +31,11 @@ Take current index and left window of substring, for loop from current index unt
 2. Sort array with descending order and backtrack
 3. In backtrack, we check if start parameter reaches end of array. If so return true. Then loop through sides[] length to populate each side. If sides[i] + current array[start] <= edge length, we can backtrack from next position and if backtrack works, we return true. Remember to remove last, i.e. sides[i] - array[start]
 
+## 526. Beautiful Arrangement
+1. We use boolean array(range from 1 to n) to record each index whether can be divided or not. Also we need global variable count to update result
+2. We use backtrack to update, the parameters we pass in are start(initialize as 1), n and visited array. In backtrack method, once start greater than n, we need to update result of count and return. 
+3. Next for each START variable, we loop through from 1 to n, once not visited this number and mod is 0(2 mods), we can mark i as true and backtrack from START + 1
+
 ## 1239. Maximum Length of a Concatenated String with Unique Characters
 1. Define global variable result to update max
 2. In dfs method, We use noDuplicate helper method to check current string has duplicate or not. If no, update max result. Then we check once reaches the end of list, if there is still duplicate, if so return. Next looping from start to end, each time concat current string
