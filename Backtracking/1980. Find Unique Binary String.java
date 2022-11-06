@@ -25,7 +25,7 @@ class Solution {
     }
 }
 
-## Method 2: very simple substitution
+// Method 2: very simple substitution
 class Solution2 {
     public String findDifferentBinaryString(String[] nums) {
         StringBuilder sb = new StringBuilder();
