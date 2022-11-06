@@ -5,6 +5,11 @@
 2, In backtrack, we need to update row variable. When row == n, we need to add board to result list.
 3. In backtrack, we need to loop through column from 0 to n - 1, if current row and column in one of three sets above, we break single loop. Elase we add current row and column to set and mark position as 'Q'
 
+## 79. Word Search
+1. Since we need to judge concat string equals to word or not, we need a INDEX vairable of word
+2. We loop through matrix, once satisfy backtrack(which returns to boolean) we return true
+3. In backtrack method, we first check if INDEX reaches word.length(). Next we need to check if in the boundary or character not match or visited this position or not. Next we mark visiting position as true and start backtrack 4 directionally. Note if not satisfy 4 directions, we need to mark back
+
 ## 113. Path Sum II
 Note we want root-left path which means left should have no children. So when backtracking, we first judge root is null or not, next we check if no left and right children and also targetSum is 0. If so, add path to result, else we search left and right recursively
 
