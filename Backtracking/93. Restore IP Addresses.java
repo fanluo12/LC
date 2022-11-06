@@ -11,6 +11,7 @@ class Solution {
     
     public void backtrack(int leftIndex, int dots, String curIP, String s, List<String> res) {
         if (dots == 4 && leftIndex == s.length()) {
+            // note we need to remove last dot
             res.add(curIP.substring(0, curIP.length() - 1));
             return;
         }
