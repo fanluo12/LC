@@ -22,6 +22,9 @@ Take current index and left window of substring, for loop from current index unt
 
 ## 473. Matchsticks to Square && 698. Partition to K Equal Sum Subsets
 ### 698. Partition to K Equal Sum Subsets
+1. Check if could be divided by edges. If so, get edge length and sides[] array which represent each side
+2. Sort array with descending order and backtrack
+3. In backtrack, we check if start parameter reaches end of array. If so return true. Then loop through sides[] length to populate each side. If sides[i] + current array[start] <= edge length, we can backtrack from next position and if backtrack works, we return true. Remember to remove last, i.e. sides[i] - array[start]
 
 ## 1239. Maximum Length of a Concatenated String with Unique Characters
 1. Define global variable result to update max
