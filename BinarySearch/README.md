@@ -20,15 +20,14 @@ Use left and right pointer to binary search. If nums[mid] < nums[right], if the 
 
 ## 153. Find Minimum in Rotated Sorted Array && 81. Search in Rotated Sorted Array II && 154. Find Minimum in Rotated Sorted Array II
 ### 153
-Use left and right pointer to binary search.
-In while loop(left <= right), if left position already less than right, which means left is what we looking for and simply return it. Then we find middle index of left and right. Note there are few situations:
+1. Use left and right pointer to binary search.
+2. In binary search, if left position already less than right, which means left is what we looking for and simply return it. Then we find middle index of left and right. Note there are few situations:
 1. [2, 1], mid is 0. nums[mid] should >= nums[left] and then update left to mid + 1
 2. [3, 1, 2], mid is less than right. In this time right should be mid
 ### 81
 Same as 153 and just return boolean value. Use left and right pointer to find middle pointer. In while(left <= right) loop, if we find middle pointer is target, then simply return true. If left < mid, we need to judge target belong to [left, mid] or not. Same as left > mid
-### HARD**154
-1. while left < right
-2. if mid < right -- right = mid; else if mid > right -- left = mid + 1; else right--
+### **154
+Similar to 153, in binary search we check if left < right. If so, meaning already satisfy criterial and return left. Since we're going to find left, once we find middle pointer and arr[mid] >= arr[left], we need to update left + 1 rather left = mid + 1 since mid + 1 could also be duplicate one
 
 ## 34. Find First and Last Position of Element in Sorted Array
 This is one main different from binary search. When we find nums[mid] == target, we need to update to both direction to find left most and right most indices.
