@@ -51,8 +51,9 @@ For the helper function, we need to find how many sub-arrays here where largest 
 3. If there is no result for the check above, check from peak + 1 to the end
 
 ## 1300. Sum of Mutated Array Closest to Target
-1. Find the max and sum of array. If sum == target, then return max value of array
-2. Use min = 0 and max to binary search, each time when we find mid, we use helpepr function to get mutated sum of array(this would calculate sum of array when value greater than mid would all counts as mid). If this mutated sum > target, max = mid - 1, else min = mid + 1. After we update max or min, we update difference of mutated sum and target. If this difference is less than previous difference or equal but mid is less than result(initialize as 1), we update result as mid and difference as mutated sum - target
+1. Find the max and sum of array. If sum == target, then return max value of array since we don't need to change any value of array
+2. Use min = 0 and max to binary search, each time when we find mid, we use helpepr function to get mutated sum of array(this would calculate sum of array when value greater than mid would all counts as mid). If this mutated sum > target, max = mid - 1, else min = mid + 1
+3. After we update max or min, we update difference of mutated sum and target. If this difference is less than previous difference or equal but mid is less than result(initialize as 1 since 1 is the smallest case), we update result as mid and difference as mutated sum - target
 
 ## **1898. Maximum Number of Removable Characters
 1. We create char array to modify removed characters
