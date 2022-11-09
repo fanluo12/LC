@@ -45,6 +45,11 @@ For method2, to avoid stack overflow, we need to replace mid * mid with tmp = nu
 We use two extreme situations to perform binary search. The largest sum is the sum of all elements which no cut and smallest sum(although comparing to largest solution, it is the largest number of array) is the largest element which divide all array elements. So we take these two as left and right to perform binary search. Each time we get a middle sum and we want to use a helper function to see how many subarrays here when sum is mid. If this helper function returns a smaller value than m meaning we need more cut and right is responsible for (n - 1) cut(largest cut number), we need to shrink right to get more cut.
 For the helper function, we need to find how many sub-arrays here where largest sum less than mid. So we initialize sum as 0 and count as 0(sub-arrays number). We loop through nums array and update sum to sum variable, if sum <= mid keep adding, else meaning sub-array sum reaches mid and cut + 1. So assign new coming element to sum for new searching and count ++. We finally return count
 
+## 1095. Find in Mountain Array
+1. Find peak position, if peak is target then there would be no more target, just return peak
+2. Check from 0 to peak to find target
+3. If there is no result for the check above, check from peak + 1 to the end
+
 ## 1300. Sum of Mutated Array Closest to Target
 1. Find the max and sum of array. If sum == target, then return max value of array
 2. Use min = 0 and max to binary search, each time when we find mid, we use helpepr function to get mutated sum of array(this would calculate sum of array when value greater than mid would all counts as mid). If this mutated sum > target, max = mid - 1, else min = mid + 1. After we update max or min, we update difference of mutated sum and target. If this difference is less than previous difference or equal but mid is less than result(initialize as 1), we update result as mid and difference as mutated sum - target
