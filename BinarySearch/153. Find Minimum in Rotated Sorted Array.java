@@ -19,7 +19,7 @@ class Solution {
 }
 
 // <= method
-class Solution {
+class Solution2 {
     public int findMin(int[] nums) {
         int left = 0, right = nums.length - 1;
         
