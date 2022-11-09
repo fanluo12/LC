@@ -36,6 +36,11 @@ After we find nums[mid] == target, we assign left and right pointer as mid and u
 ## 69. Sqrt(x)
 Use binary search to find square root. Left as 1 and right as x. Each time we find mid, we judge if mid^2 <= x and (mid + 1)^2 > x and return
 
+## 278. First Bad Version
+Elements after first bad version would be bad version so we need to find as left as we can
+1. We use left = 0 and right = n to binary search
+2. Each time we find mid in binary search, if it is bad by API check, we need to find whether if there exists in left side, so we update right as mid. Else left = mid + 1
+
 ## 367. Valid Perfect Square
 First remember cannot use mid * mid since stack overflow. So method1 we can use long to represent.
 For method2, to avoid stack overflow, we need to replace mid * mid with tmp = num / mid and compare tmp and mid to see if they equal or not. But remember, int tmp can be fake since 5 /2 = 2, so we need to add remainder to judge together
