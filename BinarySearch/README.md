@@ -30,7 +30,7 @@ Same as 153 and just return boolean value. Use left and right pointer to find mi
 Similar to 153, in binary search we check if left < right. If so, meaning already satisfy criterial and return left. Since we're going to find left, once we find middle pointer and arr[mid] >= arr[left], we need to update left + 1 rather left = mid + 1 since mid + 1 could also be duplicate one
 
 ## 34. Find First and Last Position of Element in Sorted Array
-This is one main different from binary search. When we find nums[mid] == target, we need to update to both direction to find left most and right most indices.
+This is one main different from binary search. When we find nums[mid] == target, we update left and right pointer as mid and update to both direction to find left most and right most indices which equals to target.
 After we find nums[mid] == target, we assign left and right pointer as mid and use while loop to update them
 
 ## 69. Sqrt(x)
