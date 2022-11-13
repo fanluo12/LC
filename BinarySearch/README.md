@@ -42,8 +42,9 @@ Elements after first bad version would be bad version so we need to find as left
 2. Each time we find mid in binary search, if it is bad by API check, we need to find whether if there exists in left side, so we update right as mid. Else left = mid + 1
 
 ## 367. Valid Perfect Square
-First remember cannot use mid * mid since stack overflow. So method1 we can use long to represent.
-For method2, to avoid stack overflow, we need to replace mid * mid with tmp = num / mid and compare tmp and mid to see if they equal or not. But remember, int tmp can be fake since 5 /2 = 2, so we need to add remainder to judge together
+We need to avoid integer out of range problem when we binary search
+1. We can use long type for mid and check if mid^2 is num then return true
+2. We can also use tmp = num / mid and compare tmp and mid to see if they equal or not. But remember, int tmp can be fake since 5 /2 = 2, so we need to add additional remainder = 0 to check together
 
 ## ** 410. Split Array Largest Sum
 We use two extreme situations to perform binary search. The largest sum is the sum of all elements which no cut and smallest sum(although comparing to largest solution, it is the largest number of array) is the largest element which divide all array elements. So we take these two as left and right to perform binary search. Each time we get a middle sum and we want to use a helper function to see how many subarrays here when sum is mid. If this helper function returns a smaller value than m meaning we need more cut and right is responsible for (n - 1) cut(largest cut number), we need to shrink right to get more cut.
