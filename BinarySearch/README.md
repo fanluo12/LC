@@ -1,5 +1,13 @@
 # 13 total - 09/18/2022
 
+## 4. Median of Two Sorted Arrays
+1. We need 4 variables, index1(0) and index2(0) represents the position of arr1 and arr2, mid1 and mid2 updates result. If m(arr1.length) + n(arr2.length) is even, result will be (mid1 + mid2) / 2, otherwise will be mid2. So basically we need to find mid2
+1. Loop through from 0 to (m + n) / 2
+2. For each loops, we need to check 3 conditions, if index1 reaches end of arr1, if index2 reaches end of arr2 or if index1 and index2 in progress
+3. We take third statement first, if index1 and index2 still in progress, then we need to update mid2, which if arr1[index1] < arr2[index2] then mid2 = arr[index1] and index1 ++ else mid2 = arr2[index2] and index2 ++
+4. Once index1 or index2 reaches m or n and also we still in loop, this will have a situation like one array is finished and it is too short, we still need to traverse other one. In this case we need to update index2 if arr1 reached end or index1 if arr2 reached end. In this time we still need to update mid2. But what if total length is even?
+5. To solve this problem in 4, we need to assign mid1 = mid2 at very first of loop, in this time for example, [1,2] and [3, 4]. After statement 3, arr1 reaches end and mid2 = 2, however we still have one loop left, so at very first we assign mid1 = mid2 which is 2 and update arr2 and assign mid2 = 3. So final result is (2 + 3) / 2
+
 ## 704. Binary Search && 35. Search Insert Position
 ### 704
 Simply while (left <= right) and find mid of left and right pointer
