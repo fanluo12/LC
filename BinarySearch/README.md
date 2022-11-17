@@ -12,6 +12,10 @@
 1. Take left = 1 and right = n pointer as long type since we need to calculate sum from 1 to mid and this sum coule out of integer range
 2. In binary search, we find mid and calculate sum of mid. If this sum greater than n, means last row is not full, so right = mid - 1 Otherwise update left and also update result which is the max of itself and mid
 
+## 540. Single Element in a Sorted Array
+1. We need to use binary search to find mid and judge if mid is odd index then nums[mid] == nums[mid - 1] or mid is even index then nums[mid] == nums[mid + 1]
+2. Notice case of[1], so our binary search would be while (left < right)
+
 ## 704. Binary Search && 35. Search Insert Position
 ### 704
 Simply while (left <= right) and find mid of left and right pointer
