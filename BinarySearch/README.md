@@ -1,4 +1,4 @@
-# 13 total - 09/18/2022
+# 22 total - 09/18/2022
 
 ## 4. Median of Two Sorted Arrays
 1. We need 4 variables, index1(0) and index2(0) represents the position of arr1 and arr2, mid1 and mid2 updates result. If m(arr1.length) + n(arr2.length) is even, result will be (mid1 + mid2) / 2, otherwise will be mid2. So basically we need to find mid2
