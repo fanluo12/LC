@@ -8,6 +8,10 @@
 4. Once index1 or index2 reaches m or n and also we still in loop, this will have a situation like one array is finished and it is too short, we still need to traverse other one. In this case we need to update index2 if arr1 reached end or index1 if arr2 reached end. In this time we still need to update mid2. But what if total length is even?
 5. To solve this problem in 4, we need to assign mid1 = mid2 at very first of loop, in this time for example, [1,2] and [3, 4]. After statement 3, arr1 reaches end and mid2 = 2, however we still have one loop left, so at very first we assign mid1 = mid2 which is 2 and update arr2 and assign mid2 = 3. So final result is (2 + 3) / 2
 
+## 441. Arranging Coins
+1. Take left = 1 and right = n pointer as long type since we need to calculate sum from 1 to mid and this sum coule out of integer range
+2. In binary search, we find mid and calculate sum of mid. If this sum greater than n, means last row is not full, so right = mid - 1 Otherwise update left and also update result which is the max of itself and mid
+
 ## 704. Binary Search && 35. Search Insert Position
 ### 704
 Simply while (left <= right) and find mid of left and right pointer
