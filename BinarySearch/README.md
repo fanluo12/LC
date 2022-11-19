@@ -16,6 +16,18 @@
 1. We need to use binary search to find mid and judge if mid is odd index then nums[mid] == nums[mid - 1] or mid is even index then nums[mid] == nums[mid + 1]
 2. Notice case of[1], so our binary search would be while (left < right)
 
+## 658. Find K Closest Elements
+```
+   Left     Mid      Right   k elements
+  [                       ]            ]
+ x        x                  x             x
+```
+We can divide arr to 2 parts, one part is first arr.length - k elements, the other part is k elements after first part. We do binary search in first part
+1. The first situation is that x before first part. In this situation, each time we find mid, and obviously the distance between x and mid greater than x and arr[mid + k], so we update right as mid and finally left stays and return [left, left + k]
+2. The scond situation is that x in the first part, in this time we update mid to make it close to x. If distance between mid and x greater than distance between mid + k and x, we update left to get close to x, otherwise we update right window
+3. The third situation is that x in second part, so we need to update left window, which also same with step 2
+4. The 4th part is x out of range, we must update left to get closer
+
 ## 704. Binary Search && 35. Search Insert Position
 ### 704
 Simply while (left <= right) and find mid of left and right pointer
