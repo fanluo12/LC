@@ -1,6 +1,6 @@
 class TimeMap {
 
-    HashMap<String, List<Pair<String, Integer>>> map;
+    Map<String, List<Pair<String, Integer>>> map;
     
     public TimeMap() {
         map = new HashMap<>();
