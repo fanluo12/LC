@@ -12,6 +12,13 @@ For isValid function, simply define a count variable and add 1 to count if loopi
 2. Loop through res, once element is 0, put position(row, col) to queue
 3. Use queue to do BFS. Each time poll out (r, c) and find (newRow, newCol) 4 directionally. Note we need to safisfy boundary criteria and (newRow, newCol) must be -1. In this case we update res[newRow][newCol] = res[r][c] + 1 and put (newRow, newCol) to queue
 
+## 752. Open the Lock
+1. Use deadends set to store all deadends and check if target if one of them
+2. Use 2 queues, lock and steps which store current lock and steps. Initiate them with "0000" and 0
+3. Do BFS algorithm, each time poll 2 queues. Once polled lock is target then return polled step, otherwise if polled lock is a deadend then continue to break single loop
+4. Loop through 4 indices, and choose digit up and down. For digit up, is current index is 9 and assign 0 otherwise digit + 1. Same for digit down
+5. Once we created substring of current lock, i.e. (0, i) + digitUp(or digitDown) + (i + 1), we check if in visited set or not. If not, put it to visited set and 2 queues
+
 ## 1438. Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit
 1. We use two queue, maxQ and minQ to store element with descending and ascending order
 2. We use two pointers, left and right to update max window.
