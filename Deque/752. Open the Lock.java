@@ -1,23 +1,28 @@
 class Solution {
     public int openLock(String[] deadends, String target) {
-        HashSet<String> set = new HashSet<>();
+        // use set to store deadends
+        Set<String> set = new HashSet<>();
         for (String deadend: deadends) {
             set.add(deadend);
         }
+        // if target is a deadend then return -1
         if (set.contains(target)) {
             return -1;
         }
-        HashSet<String> visited = new HashSet<>();
+        // use visited set to record happened situations
+        Set<String> visited = new HashSet<>();
+        // use 2 queues to record lock and steps
         Deque<String> lock = new LinkedList<>();
-        Deque<Integer> turns = new LinkedList<>();
+        Deque<Integer> steps = new LinkedList<>();
+        // initiate 2 queues
         lock.offer("0000");
-        turns.offer(0);
+        steps.offer(0);
         
-        while (!lock.isEmpty() && !turns.isEmpty()) {
+        while (!lock.isEmpty() && !steps.isEmpty()) {
             String tmpLock = lock.poll();
-            int tmpTurn = turns.poll();
+            int step = steps.poll();
             if (tmpLock.equals(target)) {
-                return tmpTurn;
+                return step;
             }
             else if (set.contains(tmpLock)) {
                 continue;
@@ -32,13 +37,13 @@ class Solution {
                 if (!visited.contains(s1)) {
                     visited.add(s1);
                     lock.offer(s1);
-                    turns.offer(tmpTurn + 1);
+                    steps.offer(step + 1);
                 }
                 
                 if (!visited.contains(s2)) {
                     visited.add(s2);
                     lock.offer(s2);
-                    turns.offer(tmpTurn + 1);
+                    steps.offer(step + 1);
                 }
             }
         }
