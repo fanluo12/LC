@@ -1,7 +1,8 @@
 class Solution {
     public String simplifyPath(String path) {
         Deque<String> queue = new LinkedList<>();
-        for (String s: path.split("/")) {
+        String[] strArr = path.split("/");
+        for (String s: strArr) {
             if (s.equals("..")) {
                 queue.pollLast();
             }
