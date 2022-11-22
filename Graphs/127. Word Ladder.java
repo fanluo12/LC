@@ -47,3 +47,45 @@ class Solution {
         return 0;
     }
 }
+
+// method2: common BFS. Too slow
+class Solution2 {
+    public int ladderLength(String beginWord, String endWord, List<String> wordList) {
+        Set<String> set = new HashSet<>();
+        set.addAll(wordList);
+        if (!set.contains(endWord)) {
+            return 0;
+        }
+        
+        int res = 1;
+        Deque<String> queue = new LinkedList<>();
+        queue.offer(beginWord);
+        
+        Set<String> visited = new HashSet<>();
+        visited.add(beginWord);
+        
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            for (int i = 0; i < size; i ++) {
+                String word = queue.poll();
+                if (word.equals(endWord)) {
+                    return res;
+                }
+                for (int j = 0; j < word.length(); j ++) {
+                    for (char c = 'a'; c <= 'z'; c ++) {
+                        String newWord = word.substring(0, j) + c + word.substring(j  + 1);
+                        if (!set.contains(newWord)) {
+                            continue;
+                        }
+                        if (!visited.contains(newWord)) {
+                            visited.add(newWord);
+                            queue.offer(newWord);
+                        }
+                    }
+                }
+            }
+            res ++;
+        }
+        return 0;
+    }
+}
