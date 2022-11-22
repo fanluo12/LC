@@ -50,3 +50,8 @@ We want to know grid2 islands are sub islands of grid1, first we traverse two gr
 
 ## 1958. Check if Move is Legal
 We want to change (r, c) to one color such that this color be a end point of ONE good line(at least 3 cell and two end points colors are same). So take (rMove, cMove) stable, and search 8 directionally with dfs search. In dfs search, we need to calculate line length. While new row and col in boundaries, we grid[new row][new col] is same color with stable point, we check if length greater than 3
+
+## 1091. Shortest Path in Binary Matrix
+1. We use BFS to solve this problem and we mark visited 0 as 1 to avoid extra space
+2. We use LinkedList to store[row, col, path]. In BFS, we poll out arr and once row and col reaches end of matrix, we return path
+3. Then search 8 directionally, once satisfy boundary criterias and [new row, new col] is 1 rather 0, we offer them to queue and mark as 1
