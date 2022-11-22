@@ -1,4 +1,12 @@
 # 10 total - 09/18/2022
+## 126. Word Ladder II
+1. Use hashset to store all the words from wordList and return empty list if endWord not in it
+2. Since we want to return list of lists, we use hashmap to store <String, List<List<String>>> pair. For example, before BFS algorigthm, we should put <hit: [[hit]]>
+3. Use BFS algorithm, each time we create a empty map called tmpMap which used to update result. The ideally result after first loop should be <hit: [[hit, hot]]>
+4. When BFS, we first loop through keySets of map. If word from keySets equals to endWord, simply return map.get(word)
+5. Then we need to substitute each digit. Loop through word length and for each index we loop from 'a' to 'z' to create newWord. If newWord not exists in hashset, continue to break single loop
+6. If newWord, for example "hot" is one word of hashset, we need to take "hot" as key for tmpMap and get all the lists from map.get(word), which is ["hit"] and add newWord to it which becomes ["hit", "hot"]
+7. After we got first round result, tmpMap = <"hot":[["hit", "hot"]]>, we don't need "hot" anymore and can remove from set. Also re-assign map to tmpMap since we don't need previous word
 
 ## 200. Number of Islands
 For loop through array once we meet "1"--island, we start dfs and update our result for each dfs.
