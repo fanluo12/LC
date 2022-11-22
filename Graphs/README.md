@@ -1,5 +1,6 @@
 # 17 total - 11/22/2022
-## 126. Word Ladder II
+## 126. Word Ladder II && 127. Word Ladder
+### 126
 1. Use hashset to store all the words from wordList and return empty list if endWord not in it
 2. Since we want to return list of lists, we use hashmap to store <String, List<List<String>>> pair. For example, before BFS algorigthm, we should put <hit: [[hit]]>
 3. Use BFS algorithm, each time we create a empty map called tmpMap which used to update result. The ideally result after first loop should be <hit: [[hit, hot]]>
@@ -7,6 +8,10 @@
 5. Then we need to substitute each digit. Loop through word length and for each index we loop from 'a' to 'z' to create newWord. If newWord not exists in hashset, continue to break single loop
 6. If newWord, for example "hot" is one word of hashset, we need to take "hot" as key for tmpMap and get all the lists from map.get(word), which is ["hit"] and add newWord to it which becomes ["hit", "hot"]
 7. After we got first round result, tmpMap = <"hot":[["hit", "hot"]]>, we don't need "hot" anymore and can remove from set. Also re-assign map to tmpMap since we don't need previous word
+### 127
+127 only needs to find length of word chain, so we basically have two ways to implement
+1. Simple BFS. Use queue(which initiately offered beginWord) and result integer(res = 1) to do BFS. Each time for polled word, loop through each index and nested loop from 'a' to 'z' for newWord concatenation. Once newWord not in set which stores all the words from wordList, continue to break single loop. If exists but not exists in visited set, add to visited and queue
+2. We use hashmap to store <pattern(h*t), [hot, hit,...]> to store patterns as key and all the words matches pattern as a list. Then simple BFS, if new concatenation word matches pattern, get all words in map.get(word) and add them to queue and visited set
 
 ## 200. Number of Islands
 For loop through array once we meet "1"--island, we start dfs and update our result for each dfs.
@@ -28,10 +33,6 @@ For those non-T are just flip them. Finally flip T to O
 Count total fresh oranges and use minutes to update final result.
 Use deque to input row and col of rotten orange.
 While loop deque until its empty or still have fresh. Add new direction which could be rotten to deque
-
-## 127. Word Ladder
-Use map to store pattern of each word with replacing each character to *. Key as pattern and value as word
-Use deque to add word into it. While looping deque until it is empty, each time we poll word from deque. If word happends to be end word just return it. Else, we need find this word's all pattern and see if map contains it and use visited set to reduce duplicate times
 
 ## 684. Redundant Connection
 Use parent array to represent original from-to. Initialte parent as [0, 1, 2, 3...]
