@@ -1,14 +1,12 @@
 class Solution {
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
-        HashSet<String> set = new HashSet<>();
-        for (String s: wordList) {
-            set.add(s);
-        }
+        Set<String> set = new HashSet<>();
+        set.addAll(wordList);
         if (!set.contains(endWord)) {
             return 0;
         }
         
-        HashMap<String, List<String>> map = new HashMap<>();
+        Map<String, List<String>> map = new HashMap<>();
         for (String word: set) {
             for (int i = 0; i < word.length(); i ++) {
                 String pattern = word.substring(0, i) + "*" + word.substring(i + 1);
@@ -18,9 +16,10 @@ class Solution {
         }
         
         int res = 1;
-        Deque<String> queue = new ArrayDeque<>();
+        Deque<String> queue = new LinkedList<>();
         queue.offer(beginWord);
-        HashSet<String> visited = new HashSet<>();
+        
+        Set<String> visited = new HashSet<>();
         visited.add(beginWord);
         
         while (!queue.isEmpty()) {
@@ -33,10 +32,10 @@ class Solution {
                 for (int j = 0; j < word.length(); j ++) {
                     String pattern = word.substring(0, j) + "*" + word.substring(j + 1);
                     if (map.containsKey(pattern)) {
-                        for (String allPatternWord: map.get(pattern)) {
-                            if (!visited.contains(allPatternWord)) {
-                                visited.add(allPatternWord);
-                                queue.offer(allPatternWord);
+                        for (String patternWord: map.get(pattern)) {
+                            if (!visited.contains(patternWord)) {
+                                visited.add(patternWord);
+                                queue.offer(patternWord);
                             }
                         }
                     }
