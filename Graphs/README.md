@@ -61,7 +61,7 @@ The key of this problem is to count idslands by dfs algorithm, we can use dfs to
 3. Loop through rest grid2, once we find a island, use dfs to mark its connected place as 0 and update count
 
 ## 1958. Check if Move is Legal
-We want to change (r, c) to one color such that this color be a end point of ONE good line(at least 3 cell and two end points colors are same). So take (rMove, cMove) stable, and search 8 directionally with dfs search. In dfs search, we need to calculate line length. While new row and col in boundaries, we grid[new row][new col] is same color with stable point, we check if length greater than 3
+We want to change (r, c) to one color such that this color be a end point of ONE good line(at least 3 cell and two end points colors are same). So take (rMove, cMove) fixed, and search 8 directionally with dfs search and once there exists a good line simply return true. In dfs search, we need to calculate line length. While new row and col in boundaries and update row and col. When grid[new row][new col] is same color with stable point, we check if length greater than 3
 
 ## 1091. Shortest Path in Binary Matrix
 1. We use BFS to solve this problem and we mark visited 0 as 1 to avoid extra space
