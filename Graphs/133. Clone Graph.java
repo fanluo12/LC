@@ -20,7 +20,7 @@ class Node {
 
 class Solution {
     
-    public HashMap<Integer, Node> map = new HashMap<>();
+    public Map<Integer, Node> map = new HashMap<>();
     
     public Node cloneGraph(Node node) {
         if (node == null) {
