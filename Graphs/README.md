@@ -49,10 +49,12 @@ For each edge, first we find output from parent with find function. If they are 
 
 ## 289. Game of Life
 Four states,
+```
 1. 0 -> 0
 2. 1 -> 0
 3. 0 -> 1
 4. 1 -> 1
+```
 Define a helper function to count live neighbors for current index. Note we need to loop vertical, horizontal and diagnal directions, so loop would be [row - 1, row + 1], [col - 1, col + 1]. Once satisfy with corner situation and neighbor is 1 or 3(state 4: 1-> 1), update neighbor number.
 Loop through all indices, for each index use method above to count neighbors. If current is 1 and neighbors is 2 or 3, make it to 3 for state 4. If current is 0 and neighbor is 3, mark as 2 for state 3.
 Finally loop through matrix, put 1 to 0, put 3 to 1 and put 2 to 1
