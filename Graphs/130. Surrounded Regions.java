@@ -1,15 +1,20 @@
 class Solution {
+    
+    private int[][] directions = {{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
+    
     public void solve(char[][] board) {
         int ROWS = board.length, COLS = board[0].length;
         
+        // this step converts 4 edges and their connections to T since they cannot be marked as 'X'
         for (int r = 0; r < ROWS; r ++) {
             for (int c = 0; c < COLS; c ++) {
-                if (board[r][c] == 'O' && ((r == 0 || r == ROWS - 1) || (c == 0 || c == COLS - 1))) {
-                    capture(board, r, c);
+                if (board[r][c] == 'O' && (r == 0 || r == ROWS - 1 || c == 0 || c == COLS - 1)) {
+                    convertEdgeToT(board, r, c);
                 }
             }
         }
         
+        // mark rest 'O' to 'X'
         for (int r = 0; r < ROWS; r ++) {
             for (int c = 0; c < COLS; c ++) {
                 if (board[r][c] == 'O') {
@@ -17,7 +22,7 @@ class Solution {
                 }
             }
         }
-        
+        // mark 'T' to 'O'
         for (int r = 0; r < ROWS; r ++) {
             for (int c = 0; c < COLS; c ++) {
                 if (board[r][c] == 'T') {
@@ -25,15 +30,13 @@ class Solution {
                 }
             }
         }
-        
     }
     
-    public void capture(char[][] board, int r, int c) {
-        if (r >= 0 && c >= 0 && r < board.length && c < board[0].length && board[r][c] == 'O') {
+    public void convertEdgeToT(char[][] board, int r, int c) {
+        if (r >= 0 && r < board.length && c >= 0 && c < board[0].length && board[r][c] == 'O') {
             board[r][c] = 'T';
-            int[][] directions = {{r - 1, c}, {r + 1, c}, {r, c + 1}, {r, c - 1}};
             for (int[] dir: directions) {
-                capture(board, dir[0], dir[1]);
+                convertEdgeToT(board, r + dir[0], c + dir[1]);
             }
         }
     }
