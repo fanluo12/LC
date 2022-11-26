@@ -13,9 +13,16 @@
 1. Simple BFS. Use queue(which initiately offered beginWord) and result integer(res = 1) to do BFS. Each time for polled word, loop through each index and nested loop from 'a' to 'z' for newWord concatenation. Once newWord not in set which stores all the words from wordList, continue to break single loop. If exists but not exists in visited set, add to visited and queue
 2. We use hashmap to store <pattern(h*t), [hot, hit,...]> to store patterns as key and all the words matches pattern as a list. Then simple BFS, if new concatenation word matches pattern, get all words in map.get(word) and add them to queue and visited set
 
-## 200. Number of Islands
+## 200. Number of Islands && 1905. Count Sub Islands
+Both question uses dfs method to mark islands to water, and in this way to find connecter islands
+### 200
 For loop through array once we meet "1"--island, we start dfs and update our result for each dfs.
 For dfs function, first we need to mark visited island as "0" and search for 4 directions. If satisfy boundary criterias, keep searching
+## 1905
+The key of this problem is to count idslands by dfs algorithm, we can use dfs to convert islands to water of grid2. It can be splitted to these steps:
+1. If cell of grid1 is water while grid2 not, we need to use dfs to convert islands of grid2 to water since they definately cannot be counted as sub-islands of grid1
+2. Once first filter finised, the left isilands of grid2 are the sub-islands. We need to count them with dfs method
+3. Loop through rest grid2, once we find a island, use dfs to mark its connected place as 0 and update count
 
 ## 695. Max Area of Island
 For loop through array when we meet island and search with dfs.
@@ -52,13 +59,6 @@ Finally loop through matrix, put 1 to 0, put 3 to 1 and put 2 to 1
 
 ## 463. Island Perimeter
 Loop through matrix, if matrix[r][c] == 1, result +4. If previous row or columns is also 1, then two of them connected would have a overlapped edge, so -2 if these situations
-
-
-## 1905. Count Sub Islands
-The key of this problem is to count idslands by dfs algorithm, we can use dfs to convert islands to water of grid2. It can be splitted to these steps:
-1. If cell of grid1 is water while grid2 not, we need to use dfs to convert islands of grid2 to water since they definately cannot be counted as sub-islands of grid1
-2. Once first filter finised, the left isilands of grid2 are the sub-islands. We need to count them with dfs method
-3. Loop through rest grid2, once we find a island, use dfs to mark its connected place as 0 and update count
 
 ## 1958. Check if Move is Legal
 We want to change (r, c) to one color such that this color be a end point of ONE good line(at least 3 cell and two end points colors are same). So take (rMove, cMove) fixed, and search 8 directionally with dfs search and once there exists a good line simply return true. In dfs search, we need to calculate line length. While new row and col in boundaries and update row and col. When grid[new row][new col] is same color with stable point, we check if length greater than 3
