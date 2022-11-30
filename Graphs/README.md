@@ -28,6 +28,10 @@ The key of this problem is to count idslands by dfs algorithm, we can use dfs to
 For loop through array when we meet island and search with dfs.
 In dfs, once we out of boundry or current position is 0, we return 0. Then mark current position 0 as visited and search 4 directions
 
+## 733. Flood Fill
+1. Get color of (sr, sc). If this color not equals to new color, do DFS method to populate result array
+2. In DFS method, we first mark current position as new color. Then for 4 directions, once they satisfy boarder conditions and new position color is same, do DFS recursively
+
 ## 417. Pacific Atlantic Water Flow
 Use 2 sets representing pacific and atlantic. Start from each ocean boundary and search for higher altitude inside and populate sets.
 Finally cross check two sets' intersections.
