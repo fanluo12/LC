@@ -50,14 +50,14 @@ For each edge, first we find output from parent with find function. If they are 
 ## 289. Game of Life
 Four states,
 ```
-1. 0 -> 0
-2. 1 -> 0
-3. 0 -> 1
-4. 1 -> 1
+1. 0 -> 0: nothing to worry about
+2. 1 -> 0: we don't need to mark this state. After converting 2 and 3, we only need to turn them to 0 since they are dead
+3. 0 -> 1: this state we need to focus, we mark as state 2, which needs 3 live neighbors
+4. 1 -> 1: this state we need to focus, we mark as state 3, which needs 2 or 3 live neighbors
 ```
-Define a helper function to count live neighbors for current index. Note we need to loop vertical, horizontal and diagnal directions, so loop would be [row - 1, row + 1], [col - 1, col + 1]. Once satisfy with corner situation and neighbor is 1 or 3(state 4: 1-> 1), update neighbor number.
-Loop through all indices, for each index use method above to count neighbors. If current is 1 and neighbors is 2 or 3, make it to 3 for state 4. If current is 0 and neighbor is 3, mark as 2 for state 3.
-Finally loop through matrix, put 1 to 0, put 3 to 1 and put 2 to 1
+1. Define a helper function to count live neighbors for current index. Note we need to loop vertical, horizontal and diagnal directions, so loop would be [row - 1, row + 1], [col - 1, col + 1]. Once (new row, new col) is not(row, col) itself and satisfy with boarder situation, and also neighbor is 1 or 3, we need to update neighbor number.
+2. Loop through matrix, for each index use method above to count neighbors. If current is 1, and neighbors are 2 or 3, mark it to 3. If current is 0 and neighbors are 3, mark as 2
+3. Finally loop through matrix, turn 1 to 0, turn 3 to 1 and turn 2 to 1
 
 ## 463. Island Perimeter
 Loop through matrix, if matrix[r][c] == 1, result +4. If previous row or columns is also 1, then two of them connected would have a overlapped edge, so -2 if these situations
