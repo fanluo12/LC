@@ -59,6 +59,10 @@ Four states,
 2. Loop through matrix, for each index use method above to count neighbors. If current is 1, and neighbors are 2 or 3, mark it to 3. If current is 0 and neighbors are 3, mark as 2
 3. Finally loop through matrix, turn 1 to 0, turn 3 to 1 and turn 2 to 1
 
+## 329. Longest Increasing Path in a Matrix
+1. Create dp array represent each index with its longest increasing path. Loop through matrix, and use DFS method to update dp[r][c]. Note even if DFS method will return integer, we don't have to return a specific integer. We only want to populate dp array. Then loop again to update final result
+2. In DFS method, the parameters we need to pass are row, col, boolean[][] visited to avoid repeat visit, int[][] dp, prev as -1. We first need to check if still in bounds and matrix[r][c] > prev. If not return 0. Also if new position has been visited, return dp[r][c]. Next we use path which initiated as 1 to update 4 directions max path. After updating path, mark (r, c) as visited and dp[r][c] as path
+
 ## 463. Island Perimeter
 Loop through matrix, if matrix[r][c] == 1, result +4. If previous row or columns is also 1, then two of them connected would have a overlapped edge, so -2 if these situations
 
