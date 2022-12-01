@@ -24,6 +24,10 @@ The key of this problem is to count idslands by dfs algorithm, we can use dfs to
 2. Once first filter finised, the left isilands of grid2 are the sub-islands. We need to count them with dfs method
 3. Loop through rest grid2, once we find a island, use dfs to mark its connected place as 0 and update count
 
+## 547. Number of Provinces
+1. We use 1-D array to represent each city. Then start loop from first city and with DFS method to populate all the connected to current position and update final result
+2. In DFS method, we loop through each city, if new position not visited and isConnected[i][j] == 1(means i and j connected), we mark j as visited and DFS recursively
+
 ## 695. Max Area of Island
 For loop through array when we meet island and search with dfs.
 In dfs, once we out of boundry or current position is 0, we return 0. Then mark current position 0 as visited and search 4 directions
