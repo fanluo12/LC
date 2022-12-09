@@ -21,6 +21,11 @@ After loop through left to right we get a new destination and assign to right, s
 Sum up total gas and cost, if total gas less than total cost simply return true
 For loop through gas(or cost) from 0 index. Use a variable total to record leftover gas. Then total += gas[i] - cost[i]. If total < 0 means cannot reach next gas station then assign 0 to total to reset. In the meantime, use another variable answer to record index and index should ++ since current not satisfy
 
+##135. Candy
+1. Create a result array and fill it with 1s
+2. Loop through index i from 0 to length - 2, if array[i + 1] > array[i], result array[i + 1] = [i] + 1
+3. Loop back from length - 1 to 1 since we want to update based on two side neighbors. Note that case [1,3,4,5,2], when reverse checking, [i - 1] > i, but we cannot assign [i - 1] = [i] + 1 since index 3 will be converted from 4 to 2. So we need to add a comparison which let res[i - 1] = Math.max(res[i - 1], 1 + res[i])
+
 ## 846. Hand of Straights
 ### Given hand = [1,2,3,6,2,3,4,7,8], groupSize = 3 and return true since hand can be rearranged as [1,2,3],[2,3,4],[6,7,8]
 1. Use HashMap to record each element number
