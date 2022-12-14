@@ -48,7 +48,7 @@ For loop through string, if character is '(', add 1 on two variables. If charact
 
 ## 334. Increasing Triplet Subsequence && 414. Third Maximum Number
 ### 334
-Use 2 variables, p1 and p2 which initialize as inf. For loop through array, if less than p1, assign it to p1, else if less than p2, assign it to p2, else return
+Use 2 variables, p1 and p2 which initialize as inf. For loop through array, if <= p1, assign it to p1, else if <= p2, assign it to p2, else return
 ### 414
 Use 3 variables, first, second and third as long -inf. For loop through array, if greater than first, assign second to third, first to second and nums[i] to first. If greater than seoncd and less than first, assign second to third and nums[i] to second. If greater than third and less than second, assign nums[i] to third 
 
