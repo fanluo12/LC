@@ -50,7 +50,7 @@ For loop through string, if character is '(', add 1 on two variables. If charact
 ### 334
 Use 2 variables, p1 and p2 which initialize as inf. For loop through array, if <= p1, assign it to p1, else if <= p2, assign it to p2, else return
 ### 414
-Use 3 variables, first, second and third as long -inf. For loop through array, if greater than first, assign second to third, first to second and nums[i] to first. If greater than seoncd and less than first, assign second to third and nums[i] to second. If greater than third and less than second, assign nums[i] to third 
+Use 3 variables, first, second and third as long -inf. NOTE if we are not using long type, [1,2, -inf] will return 2 since our final check is thirdMax == -inf or not. For loop through array, if greater than first, assign second to third, first to second and nums[i] to first. If greater than seoncd and less than first, assign second to third and nums[i] to second. If greater than third and less than second, assign nums[i] to third 
 
 ## 605. Can Place Flowers
 Expand original array for 2 place--one for head and one for tail and populate rest with original value. In this case we count expanded flower bed to see how many we can grow. Looping new expanded array, we judge if current position is 0 and its previous and next are also 0, in this case we can plant and minus n. We finally compare if n less than 0
