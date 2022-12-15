@@ -8,7 +8,7 @@ class Solution {
                 maxDestination = Math.max(maxDestination, nums[i] + i);
             }
             right = maxDestination;
-            left ++;
+            left ++; // note we cannot jump left to right position since the result starts from left may not be the best
             res ++;
         }
         return res;
