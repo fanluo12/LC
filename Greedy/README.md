@@ -4,11 +4,9 @@
 Use two variables, res and tmp. res is initialed as Integer.MIN_VALUE to maximum res and tmp in next steps while tmp a running sum of elements in array.
 For loop through array and use tmp to add each element. If tmp < 0 then assign 0 to tmp since negative value would be less if adding negative value so we need to start from 0 to record again the running sum.
 
-## 55. Jump Game
-Declare a integer variable maxDestination = 0 to record max destination
-For loop through array, if maxDestination < i, return false since cannot reach one certain index position. 
-Update maxDestination with maximum of itself and nums[i] + i
-If maxDestination greater then array length, then return true
+## 55. Jump Game && 45. Jump Game II
+### 55
+We only need to see for each index, max destination could reach it or not. So we create a integer variable maxDestination = 0 to record max destination. For loop through array, if maxDestination < i, return false since cannot reach one certain index position. Then update maxDestination with maximum of itself and nums[i] + i. If maxDestination greater then array length, then return true
 
 ## 45. Jump Game II
 We need to reach last index with minimum jump, so this is kind like dynamic programming with two pointers left and right
