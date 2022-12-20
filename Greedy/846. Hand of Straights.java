@@ -3,15 +3,15 @@ class Solution {
         if (hand.length % groupSize != 0) {
             return false;
         }
-        
-        HashMap<Integer, Integer> map = new HashMap<>();
+
+        Map<Integer, Integer> map = new HashMap<>();
         for (int h: hand) {
             map.put(h, map.getOrDefault(h, 0) + 1);
         }
-        
+
         PriorityQueue<Integer> pq = new PriorityQueue<>((a, b) -> (a - b));
-        for (int key: map.keySet()) {
-            pq.offer(key);
+        for (int h: map.keySet()) {
+            pq.offer(h);
         }
         
         while (!pq.isEmpty()) {
@@ -22,9 +22,6 @@ class Solution {
                 }
                 map.put(i, map.getOrDefault(i, 0) - 1);
                 if (map.get(i) == 0) {
-                    if (i != pq.peek()) {
-                        return false;
-                    }
                     pq.poll();
                 }
             }
