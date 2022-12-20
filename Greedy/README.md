@@ -58,7 +58,10 @@ case 1: [1, 7, 3, 4], at index 2 position, i-2 position can form a non decreasin
 case 2: [4, 7, 3, 9], at index 2 position, since i - 2 is greater than i and [i-2, i -1] is non-decreasing, so we want to change i to i-1 to make i-2,i-1,i non-decreasing
 
 ## 881. Boats to Save People
-Want minimum of boats, so we use greedy way. We sort array first and find 0 and last index as left and right pointers. We use while loop to update left and right pointer, if left and right sum less than limit, update left pointer, else minus right pointer and add 1 to result
+We want to be greedy -- use minimum boats to save people. This will force us to load as much as each boat can within its limit
+1. Sort array with ascending order first, and use two pointers, left and right to update
+2. While left pointer less than right pointer, we need to load as many as each boat can, so we update left when left + right <= limit. This will ensure left as far as it can
+3. Then after updating left, we need to add 1 for result and also update right since right-most people already been saved
 
 ## 926. Flip String to Monotone Increasing
 1. Find all zeros, ie max zeros we need to flip, but this is not a optimally answer
