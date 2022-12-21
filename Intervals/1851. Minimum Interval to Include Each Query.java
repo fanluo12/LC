@@ -1,29 +1,27 @@
 class Solution {
     public int[] minInterval(int[][] intervals, int[] queries) {
-        Arrays.sort(intervals, (a, b) -> (a[0] - b[0]));
-        int[] Q = queries.clone();
+        int[] originalQueries = queries.clone();
+
         Arrays.sort(queries);
-        
-        HashMap<Integer, Integer> map = new HashMap<>();
+        Arrays.sort(intervals, (a, b) -> (a[0] - b[0]));
+
+        Map<Integer, Integer> map = new HashMap<>();
         PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> (a[0] - b[0]));
-        
-        int i = 0;
-        // i is used to record index
+        int index = 0;
         for (int q: queries) {
-            while (i < intervals.length && q >= intervals[i][0]) {
-                pq.offer(new int[]{intervals[i][1] - intervals[i][0] + 1, intervals[i][1]});
-                i ++;
+            while (index < intervals.length && q >= intervals[index][0]) {
+                pq.offer(new int[]{intervals[index][1] - intervals[index][0] + 1, intervals[index][1]});
+                index ++;
             }
             while (!pq.isEmpty() && q > pq.peek()[1]) {
                 pq.poll();
             }
             map.put(q, pq.isEmpty() ? -1 : pq.peek()[0]);
         }
-        
-        int[] res = new int[queries.length];
-        i = 0;
-        for (int q: Q) {
-            res[i ++] = map.get(q);
+
+        int[] res = new int[originalQueries.length];
+        for (int i = 0; i < originalQueries.length; i ++) {
+            res[i] = map.get(originalQueries[i]);
         }
         return res;
     }
