@@ -19,14 +19,10 @@ Use a prevEnd variable to compare end element. Initialize prevEnd with intervals
 Loop throught intervals from 1st index. If intervals[i][0] greater than prevEnd, pass its value to prevEnd. Else, add value to final answer and pass smaller value of prevEnd and intervals[i][1] to prevEnd since we want minimum intervals to remove. If we remain a extremely large end for prevEnd, we need to remove quite a lot intervals
 
 ## 1851. Minimum Interval to Include Each Query
-Sort intervals first
-Sort queries for convenience
-
-While Loop through queries. For each q of queries, use priority queue(saving array[intervals length, interval end] with interval length ascending order) to add intervals which starts less than q. In the meantime, use a increasing variable i to record index. It one interval been add to PQ, i ++
-
-When first while loop stops, means q is less than new intervals[0], in this time we need to pop until the smallest interval length. Second while loop goes under circumstance that pq is not empty and pq.peek()[1] is less than q(exclude case like q = 100 while pq = ([4, 4]), in this case no interval could query q), pop pq. Finally use HashMap to put q and pq.peek()[1] if pq is not empty else put -1.
-
-We need to clone queries at first and query each q with map.
+1. Sort intervals first and sort queries for convenience. Note finally we need ordered result, so before sort queries, clone it
+2. For each query, we use priority queue to store [interval length, interval[1]]. We use an index start from 0 represents start position of intervals. When looping each query, we need to update index when index < intervals.length and also q >= current interval[0]. If so, update index and put [length, current interval[1]] to pq.
+3. After query less than intervals[i][0], we need to remove intervals in pq where pq.peek()[1] < query. Then we put pq.peek() to map if it exists else -1
+4. Finally we use map to find cloned results
 
 ## 1288. Remove Covered Intervals
 ```
