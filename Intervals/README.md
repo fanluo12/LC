@@ -1,11 +1,25 @@
 # 5 total - 12/19/2022
 
 ## 57. Insert Interval
-Use array list to add interval from intervals;
-3 conditions to check:
-1. new interval less than interval
-2. new interval has intersection with interval
-3. new intervla greater than interval
+Use array list to update interval from intervals when traversing intervals
+1. condition 1
+```
+newInterval: [   ]
+intervals[i]:       [   ]
+```
+So in this case, we add newInterval to list and assign intervals[i] to newInterval. Since original intervals is non-overlapping, so we can simply use this condition to update until the one before last one. Note that after looping all of intervals, there remain one last and this one was assigned as newInterval. Add it to final list outside the loop
+2. condition 2
+```
+newInterval: [   ]
+intervals[i]:  [     ]
+```
+In this case, we need to expand newInterval as large as we can. So we update newInterval as [min(2 starts), max(2 ends)]
+3. condition 3
+```
+newInterval:            [   ]
+intervals[i]:  [   ]
+```
+Simply add intervals[i] to list
 
 ## 56. Merge Intervals
 Use array list to add interval from intervals
