@@ -29,5 +29,11 @@ When first while loop stops, means q is less than new intervals[0], in this time
 We need to clone queries at first and query each q with map.
 
 ## 1288. Remove Covered Intervals
+```
+[       ]
+  [    ]
+  [  ]
+```
+Idea likes above. Sort intervals and update right(initial as 0) when looping sorted intervals. Once interval[1] > right, means one interval should be added to final result. Then update final result and right bound
 1. Sort intervals with left ascending orders if left boundary different. Else sort with right boundary descending order
 2. Deinfe right = 0. For loop through all intervals, if interval right boundary greater than right, assign it to right and update result
