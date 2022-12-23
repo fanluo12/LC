@@ -44,3 +44,9 @@ For loop through until length - k % length - 1 place, and break list chain, retu
 Use dummy as 0 node to connect head, pre as dummy and cur as dummy.next. While (cur != null) to search duplicate node. If cur.next is not null and cur.next.val == cur.val, we use while loop which statement same to update cur. When break while loop, we connect pre to cur.next. Else means there is no duplicate and we simply update pre until first place before duplicate
 ### 83
 We don't need to if and while loop duplicate pointer until not duplicate. We simply judge if next is duplicate, cur.next = cur.next.next, else we update cur pointer
+
+## 1290. Convert Binary Number in a Linked List to Integer
+Convert number represented in linked list to binary number
+1. We take sum as 0 and loop nodes from first node
+2. Each time when looping new node, double sum since this sum contains the previous number and previous number should double every time when node existed
+3. After doubling sum, add node.val to sum. We can imagine when looping the last digit, sum only needs to add last value to it
