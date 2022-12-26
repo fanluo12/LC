@@ -18,15 +18,16 @@ class Solution {
         if (head == null) {
             return null;
         }
-        
-        HashMap<Node, Node> map = new HashMap<>();
+
+        Map<Node, Node> map = new HashMap<>();
+
+        // Put [node, Node(node.val)] to HashMap
         Node cur = head;
-        
         while (cur != null) {
             map.put(cur, new Node(cur.val));
             cur = cur.next;
         }
-        
+
         cur = head;
         while (cur != null) {
             map.get(cur).next = map.get(cur.next);
