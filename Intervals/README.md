@@ -1,4 +1,4 @@
-# 5 total - 12/19/2022
+# 6 total - 01/04/2023
 
 ## 57. Insert Interval
 Use array list to update interval from intervals when traversing intervals
@@ -31,6 +31,16 @@ Use array list to add interval from intervals
 Sort intervals with first element ascending order
 Use a prevEnd variable to compare end element. Initialize prevEnd with intervals[0][1]
 Loop throught intervals from 1st index. If intervals[i][0] greater than prevEnd, pass its value to prevEnd. Else, add value to final answer and pass smaller value of prevEnd and intervals[i][1] to prevEnd since we want minimum intervals to remove. If we remain a extremely large end for prevEnd, we need to remove quite a lot intervals
+
+## 452. Minimum Number of Arrows to Burst Balloons
+Sort intervals like below:
+```
+[   ]
+  [       ]
+       [       ]
+             [      ]
+```
+So we use -inf as end and loop through sorted intervals. For each interval, once its left > end, count ++ and assign its right to end. Note we need to use Integer.compare(a[1], b[1]) instead of a[1] - b[1] to avoid integer overflow for case [[-2147483646,-2147483645],[2147483646,2147483647]]
 
 ## 1851. Minimum Interval to Include Each Query
 1. Sort intervals first and sort queries for convenience. Note finally we need ordered result, so before sort queries, clone it
