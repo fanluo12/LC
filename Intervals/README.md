@@ -57,3 +57,12 @@ So we use -inf as end and loop through sorted intervals. For each interval, once
 Idea likes above. Sort intervals and update right(initial as 0) when looping sorted intervals. Once interval[1] > right, means one interval should be added to final result. Then update final result and right bound
 1. Sort intervals with left ascending orders if left boundary different. Else sort with right boundary descending order
 2. Deinfe right = 0. For loop through all intervals, if interval right boundary greater than right, assign it to right and update result
+
+## 2409. Count Days Spent Together
+### How to Find two intervals overlapped part quickly?
+```
+int[] A, B;
+int start = Math.max(A[0], B[0]);
+int end = Math.min(A[1], B[1]);
+// Then end - start + 1 is the overlapped part
+```
