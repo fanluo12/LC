@@ -67,6 +67,13 @@ Very fresh method. We want to find duplicate number from array. Array length is 
 ### 446
 Same as 287, we take absolutely value of each number as index, and num[index] = -Math.abs(nums[index]) since there may duplicate number and may cause negative value back to positive value for intervention. Then we use array list to record positive value
 
+## 398. Random Pick Index
+Use Random()
+```
+Random rand = new Random();
+List<Integer> list = Arrays.asList(1,2,3,4,5);
+int randomIndex = rand.nextInt(list.size())
+```
 ## 409. Longest Palindrome
 We don't need to know the permutation of palindrome, we just need a hash set to store duplicate element. Loop through string, once character in set, means we have two of them and can make palindrome, we remove them and update count. If hash set remains element, result would be odd palindrome(count * 2 + 1) else count * 2
 
