@@ -56,6 +56,12 @@ In dfs, once we out of boundry or current position is 0, we return 0. Then mark 
 1. Get color of (sr, sc). If this color not equals to new color, do DFS method to populate result array
 2. In DFS method, we first mark current position as new color. Then for 4 directions, once they satisfy boarder conditions and new position color is same, do DFS recursively
 
+## 310. Minimum Height Trees
+We want to MHT, so first search most down layer and find as much as we can. In this case we start from down layer and BFS up
+1. Use map[node: List<nodes>] to record nodes pairs
+2. Use degree arr to represent layer level. If one node only shows up once, then assign 1, else ++
+3. Use queue to store all down level, i.e. degree[i] == 1
+4. BFS queue, each time use a level list to represent each level and search. Once parent node of current polled node's level is 1, then add to queue for next BFS search
 
 ## 329. Longest Increasing Path in a Matrix
 1. Create dp array represent each index with its longest increasing path. Loop through matrix, and use DFS method to update dp[r][c]. Note even if DFS method will return integer, we don't have to return a specific integer. We only want to populate dp array. Then loop again to update final result
