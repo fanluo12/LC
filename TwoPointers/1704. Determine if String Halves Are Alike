@@ -1,0 +1,25 @@
+class Solution {
+    public boolean halvesAreAlike(String s) {
+        int left = 0, right = s.length() - 1;
+        int vowel_left = 0, vowel_right = 0;
+        while (left < right) {
+            if (isVowel(s.charAt(left))) {
+                vowel_left ++;
+            }
+            if (isVowel(s.charAt(right))) {
+                vowel_right ++;
+            }
+            left ++;
+            right --;
+        }
+
+        return vowel_left == vowel_right;
+    }
+
+    public boolean isVowel(char c) {
+        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' || c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U') {
+            return true;
+        }
+        return false;
+    }
+}
