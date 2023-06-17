@@ -82,3 +82,7 @@ While loop deque until its empty or still have fresh. Add new direction which co
 
 ## 1958. Check if Move is Legal
 We want to change (r, c) to one color such that this color be a end point of ONE good line(at least 3 cell and two end points colors are same). So take (rMove, cMove) fixed, and search 8 directionally with dfs search and once there exists a good line simply return true. In dfs search, we need to calculate line length. While new row and col in boundaries and update row and col. When grid[new row][new col] is same color with stable point, we check if length greater than 3
+
+## 827. Making A Large Island
+![image](https://github.com/fanluo12/LC/assets/43394670/e50d23bf-cd68-4a2b-9e85-24aaee9a53b4)
+
